@@ -45,20 +45,18 @@ Hoàn Thành hướng dẫn để học cách:
 
 Chúc Bạn Vui Vẻ
 
-## {step 1} 
+## Bước 1
 
 **⭐ Chào Mừng Bạn ⭐**
 
-You've just discovered the most important part of following a tutorial — reading instructions!
-
-If you can't see all of the instructions, click **[v More...]** below to expand the box.
+Một trong những phần quan trọng nhất trong việc làm theo hướng dẫn đó là đọc hướng dẫn!
 
 ---
 
-When you're ready to move to the next step, click **[ >  Next]** to continue.  
+Sau khi hoàn thành hướng dẫn Ấn **[ ->  Next]** để tiếp tục bước tiếp theo  
 
 
-## step 2
+## Bước 2
 
 This box is where you'll find information for each step. 
 
