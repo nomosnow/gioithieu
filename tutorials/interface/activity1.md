@@ -34,19 +34,20 @@ game.onUpdateInterval(5000, function () {
 
 ![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
 
-**Are you ready to start coding your own games?**
+**Bạn Đã Sẵn Sàng Tạo Game Một Game Riêng Cho Mình Chưa?**
 
-Complete this tutorial to learn how to:
-- follow tutorial prompts
-- find blocks in the toolbox
-- build code in the workspace
-- run your game on the built-in simulator 
+Hoàn Thành hướng dẫn để học cách:
+- làm theo hướng dẫn 
+- Tìm Đoạn code hợp lý từ thanh công cụ
+- xây dựng code trên màn hình chính
+- chạy game trên máy giả lập game
 
-Before you know it, you'll have an arcade game of your very own!
 
-## step 1 
+Chúc Bạn Vui Vẻ
 
-**⭐Welcome⭐**
+## {step 1} 
+
+**⭐ Chào Mừng Bạn ⭐**
 
 You've just discovered the most important part of following a tutorial — reading instructions!
 
