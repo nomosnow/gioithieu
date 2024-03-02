@@ -1,11 +1,11 @@
-# sample
-* name: Game Maker Guide
-* description: Level up your game making skills by completing the tutorials in this guide.
+# gioithieu
+* name:  Giới Thiệu Tạo Game Arcade
+* description: Giới Thiệu Cách Làm Theo Hướng Dẫn
 
 ## interface
-* name: Learn to use MakeCode Arcade
-* description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
-* completionUrl: https://microsoft.github.io/pxt-skillmap-sample/certificates/understanding-arcade-tutorials.pdf
+* name: Hướng Dẫn Sử Dụng Công Cụ Trong Make Code Arcade
+* description: Hướng Dẫn Người Dùng Cách Sử Dụng Tutorials
+* completionUrl: https://github.com/nomosnow/gioithieu/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
