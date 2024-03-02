@@ -9,13 +9,13 @@
 
 ### interface-activity1
 
-* name: Learn to use MakeCode Arcade
+* name: Hướng Dẫn Sử Dụng MakeCode Arcade
 * type: tutorial
-* description: Intro to our tutorial cards
-* tags: easy
+* description: Hướng Dẫn Sử Dụng MakeCode Arcade
+* tags: Dễ
 
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/interface/activity1 
-* imageUrl: https://raw.githubusercontent.com/microsoft/pxt-skillmap-sample/main/img/interface/activity1.png
+* url: https://github.com/nomosnow/gioithieu/tutorials/interface/activity1 
+* imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/interface/activity1.png
 
 ## space
 * name: Design a Space Explorer
