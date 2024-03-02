@@ -17,7 +17,7 @@
 * url: https://github.com/nomosnow/gioithieu/tree/main/tutorials/interface/activity1 
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/interface/activity1.png
 
-## space
+<!-- ## space
 * name: Design a Space Explorer
 * description: Let's explore the depths of space! We'll design a vessel for space travel, add some enemies, and populate the universe with planets.
 * completionUrl: https://microsoft.github.io/pxt-skillmap-sample/certificates/design-a-space-explorer.pdf
@@ -120,4 +120,4 @@
 * description: Add physics and AI to the enemies in your game.
 * url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/platformer/activity5
 * imageUrl: https://raw.githubusercontent.com/microsoft/pxt-skillmap-sample/main/img/platformer/activity5.png
-* tags: intermediate, AI, physics
+* tags: intermediate, AI, physics -->
