@@ -12,9 +12,9 @@
 * name: Hướng Dẫn Sử Dụng MakeCode Arcade
 * type: tutorial
 * description: Hướng Dẫn Sử Dụng MakeCode Arcade
-* tags: Dễ
+* tags: easy
 
-* url: https://github.com/nomosnow/gioithieu/tutorials/interface/activity1 
+* url: https://github.com/nomosnow/gioithieu/tree/main/tutorials/interface/activity1 
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/interface/activity1.png
 
 ## space
