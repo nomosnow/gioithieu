@@ -133,30 +133,25 @@ game.splash("game của tôi là hay nhất")
 
 
 
-## The Exception
+## Bước 7
 
-Every rule has an exception, so let's look at one of the blocks
-that doesn't share the same color as the category where it lives.
+Đôi khi không phải lúc nào khối code có cùng màu với danh mục của nó.
 
-The ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
-is red, but it lives inside the ``||sprites:Sprites||`` category.
+Khối code ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` màu đỏ, nhưng lại nằm bên trong danh mục``||sprites:Sprites||``.
 
 ---
 
 <!-- **Tip:** If you can't find the block you're looking for, try -->
 
 
-🔲 Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
-end of the **on start** container and 
-play around with it until a [__*sprite*__](#sprote "A 2-D image that moves on the screen") shows on the screen.
+🔲 Đặt``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` vào phía cuối của **on start** a [__*sprite*__](#sprote "một vật thể 2-D di chuyển trên màn hình ")trên màn hình chính .
 
-*(Roll your mouse over the word __sprite__ above to see a definition.)*
+*(Di chuyển chuột đến từ *sprite* để xem định nghĩa)*
 
 ---
 
-**Tip:** Drag ``||game:splash "___"||`` out of the ``||loops:on start||`` container
-and drop it back into the toolbox to delete it so your sprite will be revealed!
-
+**Tip:** khi bạn tạo một sprite thì mặc định nó sẽ được đặt ở trung tâm màn hình. khối code *splash* đã che mất.
+kéo khối code``||game:splash "___"||`` out of the ``||loops:on start||`` thả lại vào trong toolbox đễ xoá đi thì sprite sẽ xuất hiện.
 #### ~ tutorialhint
 
 ![Open image editor](/static/skillmap/misc/open-image-editor-small.gif "How to open the image editor." )
@@ -186,14 +181,12 @@ let mySprite = sprites.create(img`
 ```
 
 
-## Container Blocks
+## Bước 8: Khối code chính
 
-**Now let's look at different types of blocks and how to use them.** 
+**Bây giờ, chọn một khối code chính mới và học cách sử dụng nó** 
 
-First, there are [__*container blocks*__](#blockIt "Blocks that hold other blocks"). 
-Container blocks have an edge at both the the top and bottom with an open space
-in the middle that allows other blocks to snap inside. Container blocks control 
-*when* the code inside runs. Here is an example:
+Trước tiên, chọn một khối code chính. đây là một khối code chữ nhật với chỗ trống ở giữa có thể chứa các khối code nhỏ khác. Khối code này có thể chạy được các khối code bên trong nó. 
+thí dụ:
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -202,8 +195,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 ---
 
-🔲  Find an ``||controller:on [A] button pressed ||`` container 
-block and drag it into the workspace. You will add to it in the next step.  
+🔲  Tìm Khối code ``||controller:on [A] button pressed ||`` và đặt nó trên màn hình chính. chúng ta sẽ sử dụng nó vào bước kế tiếp.  
 
 #### ~ tutorialhint
 
@@ -213,14 +205,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Standard Blocks
+## Bước 9: khối code nhỏ
 
-Next, there are [__*standard blocks*__](#sBlockIt "Single line blocks that make up the majority of most programs"). 
-Standard blocks are single-line blocks with notches at the top and bottom that
-allow them to click-in between other pieces. These blocks run in order from top 
-to bottom within the container that they're placed.
+ Tiếp đến, khối code nhỏ hơn trông giống như mảnh ghép, giúp chúng có thể được đặt trong khối code chính. Chúng có thể đặt trồng lên nhau và chạy theo thứ tự từ trên xuống dưới.
 
-Here is an example of a standard block:
+đây là ví dụ của khối code nhỏ:
 
 ```block
 let mySprite: Sprite = null;
@@ -229,9 +218,8 @@ mySprite.startEffect(effects.spray)
 
 ---
 
-🔲  Find a ``||sprites:[mySprite] start [spray] effect ||``  
-block and snap it into the  **on A button pressed** container...then 
-choose your own effect!
+🔲 tìm khối code ``||sprites:[mySprite] start [spray] effect ||``  
+ và đặt vào trong của khối code chính **on A button pressed** và lựa chọn hiệu ứng tại mũi tên đi xuống.
 
 #### ~ tutorialhint
 ```blocks
@@ -244,27 +232,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Value Blocks
-
-Finally, we have [__*value blocks*__](#aBlockIt "special pieces that provide values for other blocks"). 
-Value blocks are special pieces that add information to other
-blocks. Sometimes they're pointy, sometimes they're rounded,
-but they always need another block to snap into. Value blocks look something like this:
+## Bước 10: chọn giá trị của khối code
+Cuối cùng, ta có thể chọn giá trị cho từng khối code. Đôi khi đó là hình nhon, cong hoăc tròn.
+ Giống như thế này:
 
 ![Value Blocks](/static/skillmap/interface/parameter-blocks.png "This is what the shape of an value block looks like" )
 
 ---
 
-🔲  Snap a ``||sprites:[mySprite] say [":)"] ||`` block into the end of the
-**on A button pressed** container.
+🔲  Đặt khối code `||sprites:[mySprite] say [":)"] ||`` xuống phía cuối của 
+**on A button pressed**.
 
-🔲  Find the ``||game: ask for number [" "] ||`` value block and pop it inside to replace **":)"**.
+🔲  viết giá trị bất kì tại``||game: ask for number [" "] ||``" ".
 
----
-
-**Tip:** Value blocks have different shapes 
-depending on what kind of information they add. Each value will only
-fit in certain types of spaces. 
 
 #### ~ tutorialhint
 ```blocks
@@ -275,28 +255,15 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Putting it Together
+##Bước 11: chạy thử
 
-🎨 Now get creative 🎨
+🎨Giờ là lúc chơi thử🎨
 
-Feel free to take a look at the extra blocks we've added into the toolbox. 
-
-It's okay if you don't know what they all do.
-Play around with them and see how they affect your game!
-
----
-
-**Tip:** You can test your game whenever you want using the simulator
-to the left!  Use the refresh button (🔄) to reload it, and play your
-game using the buttons you've programmed!  
+chọn bất kì khối code nào và xem phản ứng từ game
 
 
 
-## Conclusion 
+##  Bước 12: kết thúc 
 
-🎈 Congratulations 🎈 
+🎈  Chúc mừng 🎈 
 
-You've learned everything you need to know to graduate to a new tutorial.
-
-Now you can continue on and learn even more tricks for
-creating games with MakeCode Arcade!  
