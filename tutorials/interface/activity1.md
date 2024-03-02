@@ -58,88 +58,77 @@ Sau khi hoàn thành hướng dẫn Ấn **[ ->  Next]** để tiếp tục bư�
 
 ## Bước 2
 
-This box is where you'll find information for each step. 
-
-If you don't find all of the info you need, 
-click the lightbulb to the right for an extra hint.
+Đây là hướng dẫn đầu tiên .
+Nếu Bạn không hiểu đươc hưỡng dẫn , hãy nhấn hình bóng đèn phía dưới bên trái để có thêm giải thích hoặc lời giải.
 
 
 #### ~ tutorialhint 
 ```
-**You found the hints!**
+**Bạn đã tìm thấy lời giải tại đây!**
 ```
 
+## Bước 3: Sử Dụng Màn Hình Chính Để Viết code
 
-## Using the workspace
-
-Now let's talk about your [__*workspace*__](#workIt "The area where you build code").
-
-Your workspace is the area below the instructions where you'll connect blocks to build your program. 
-Not all blocks will connect with one another, but we'll talk more about that later.
+Màn hình chính bên phải là nơi liên kết các đoạn khối code lại với nhau để tạo thành trò chơi.
+Trên màn hình chính có khối code **on start** để bạn bắt đầu.
 
 ---
 
-🔲 Click inside the text area of the ``||game:splash "___"||`` block 
-and change the current sentence to something a little more exciting.
+🔲  Ấn chuột vào dòng chữ``||game:splash "___"||`` và thay đổi thành một câu hoàn chỉnh.
 
 ---
 
-**Tip:** Did you notice that the first use of the word __workspace__ had a special look? 
-From time to time, we'll enhance important words. Roll your mouse over them to see a definition.
 
 #### ~ tutorialhint 
 ```blocks
-game.splash("I like bananas!")
+game.splash("Tôi thích chơi game")
 ```
 
 ```template
-game.splash("These blocks are in your workspace!")
+game.splash("Đây là câu có sẵn")
 
 ```
 
-## Meet the Blocks  @unplugged
+## Bước 4: Giới thiệu về khối code  @unplugged
 
-Blocks can be dragged out from the  [__*toolbox*__](#tools "The strip to the left of your workspace that lists block categories."), 
+khối code có thể giữ và kéo ra khỏi thanh công cụ [__*toolbox*__](#tools "Phía bên trái màn hình chính. Tại Đây có danh sách các khối chính"), 
 
-connected, duplicated, and deleted.
+liên kết, nhân bản hoặc là xoá bỏ.
 
-Keep going to learn more about blocks.
+Tiếp tục học thêm về khối code.
 
 ![Block Animation](/static/skillmap/interface/use_blocks.gif "Blocks appear, duplicate, and delete." )
 
 
 
-## Your Toolbox
+## Bước 5: Thanh công cụ Toolbox
 
-**Blocks you need won't always be in the workspace to start.**
+**Khối code không phải lúc nào cũng có mặt sẵn trên màn hình.**
 
-In the instructions, block descriptions for the block you need will 
-often be highlighted in the same color as the toolbox 
-category where they live. 
+khối code luôn luôn cùng màu với danh mục của nó
 
-**For example:** We might use ``||game:splash "___"||`` when 
-we want you to find this:
+**Ví Dụ:** chúng ta có thể dùng khối code ``||game:splash "___"||`` thực ra là chúng tôi muốn bạn tìm thấy cái này: 
 
 ```block
 game.splash(" ")
 ```
 
-This block adds a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to your project.
+Đoạn khối code này tạo  [__*đoạn chữ giới thiệu*__](#splasht "A full-screen message that shows while a program or level is loading") cho game của bạn.
 
-## Your Toolbox 2
+## Bước 6: Thanh Công cụ toolbox thứ 2
 
 
 
-**Let's see how this works**
+**thử xem nào**
 
-🔲 Find the 
-``||scene:set background color to [ ]||`` block and snap it at the top of 
-the **on start** container already in the workspace. 
+🔲 Tìm khối code
+``||scene:set background color to [ ]||`` đặt lên phía trong đầu tiên
+của **on start** đã có sẵn ở màn hình chính. 
 
 #### ~ tutorialhint 
 ```blocks
 scene.setBackgroundColor(0)
-game.splash("My monkey is better than yours")
+game.splash("game của tôi là hay nhất")
 ```
 
 
