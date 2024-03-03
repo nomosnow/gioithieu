@@ -39,10 +39,7 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 }
 ```
 
-
-
-
-## Introduction @unplugged
+## Giới Thiệu @unplugged
 
 ![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
@@ -208,4 +205,4 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 Bây giờ bạn có thể sử dụng các nút hướng để di chuyển chiếc máy bay không gian của bạn và
 nút **Ⓐ** để phóng các viên đạn!
 
-Chơi trò của bạn trong bộ mô phỏng, sau đó nhấp vào "Finish" để kết thúc và mở khoá cho phần học tiếp theo.
+Chơi trò của bạn trong bộ mô phỏng, sau đó nhấp vào "Done" để kết thúc và mở khoá cho phần học tiếp theo.

@@ -1,7 +1,7 @@
 # Thám hiểm không gian
 
 
-## Introduction @unplugged
+## Giới Thiệu @unplugged
 
 ** Hãy khám phá những cung đường của không gian! **
 
@@ -167,4 +167,4 @@ Mọi thứ có ổn không? Bạn luôn có thể quay lại các bước trư�
 
 Bạn đã sẵn sàng để du hành vũ trụ!
 
-Nhấp vào **"Finish"** để thoát ra
+Nhấp vào **"Done"** để thoát ra

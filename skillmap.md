@@ -22,12 +22,14 @@
 * description: Hãy khám phá sâu thẳm của không gian! Chúng ta sẽ thiết kế một phương tiện để du hành không gian, thêm một số kẻ thù và thực hiện việc chiếm các hành tinh trong vũ trụ.
 * completionUrl: https://microsoft.github.io/pxt-skillmap-sample/certificates/design-a-space-explorer.pdf
 
+
 ### space-activity1
 
 * name: Thiết Kế Tàu Vũ Trụ
 * type: tutorial
 * description: Vẽ và lập trình một tàu vũ trụ!
 * tags: easy
+* allowcodecarryover: true
 * next: space-activity2
 
 * url: https://github.com/nomosnow/gioithieu/tutorials/space/activity1
@@ -39,6 +41,7 @@
 * type: tutorial
 * description: Tùy chỉnh tàu của bạn với các đạn và tạo thêm hiệu ứng.
 * tags: easy, projectiles, kinds
+* allowcodecarryover: true
 * next: space-activity3
 
 * url: https://github.com/nomosnow/gioithieu/tutorials/space/activity2
@@ -50,6 +53,7 @@
 * description: Hãy cẩn thận với nguy hiểm! Thêm kẻ thù và mạng sống vào trò chơi của bạn.
 * type: tutorial
 * tags: easy, enemies, kinds
+* allowcodecarryover: true
 * next: space-activity4
 
 * url: https://github.com/nomosnow/gioithieu/tutorials/space/activity3
@@ -58,9 +62,8 @@
 ### space-activity4
 
 * name: Nạp nhiên liệu
-* type: tutorial
 * description: Sử dụng một tiện ích mở rộng để thêm một bảng đo nhiên liệu vào tàu của bạn. Đảm bảo nạp nhiên liệu thường xuyên!
-
+* kind: completion
 
 * url: https://github.com/nomosnow/gioithieu/tutorials/space/activity4
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/space/activity4.png
