@@ -32,15 +32,15 @@
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/interface/activity1.png
 
 ## space
-* name: Design a Space Explorer
-* description: Let's explore the depths of space! We'll design a vessel for space travel, add some enemies, and populate the universe with planets.
+* name: Thiết kế Game Khám Phá Không Gian
+* description: Hãy khám phá sâu thẳm của không gian! Chúng ta sẽ thiết kế một phương tiện để du hành không gian, thêm một số kẻ thù và thực hiện việc chiếm các hành tinh trong vũ trụ.
 * completionUrl: https://microsoft.github.io/pxt-skillmap-sample/certificates/design-a-space-explorer.pdf
 
 ### space-activity1
 
-* name: Ship Design
+* name: Thiết Kế Tàu Vũ Trụ
 * type: tutorial
-* description: Draw and code a spaceship!
+* description: Vẽ và lập trình một tàu vũ trụ!
 * tags: easy
 * next: space-activity2
 
