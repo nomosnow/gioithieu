@@ -28,7 +28,7 @@
 * description: Vẽ Và Tạo Cốt chuyện
 * tags: easy
 
-* url: https://github.com/nomosnow/gioithieu/tree/main/tutorials/vietnamese-ca-lon-ca-be/activity1 
+* url: https://github.com/nomosnow/gioithieu/tutorials/vietnamese-ca-lon-ca-be/activity1 
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/interface/activity1.png
 
 ## space
@@ -44,7 +44,7 @@
 * tags: easy
 * next: space-activity2
 
-* url: https://github.com/nomosnow/gioithieu/tree/main/tutorials/space/activity1
+* url: https://github.com/nomosnow/gioithieu/tutorials/space/activity1
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/space/activity1.png
 
 ### space-activity2
@@ -55,7 +55,7 @@
 * tags: easy, projectiles, kinds
 * next: space-activity3
 
-* url: https://github.com/nomosnow/gioithieu/tree/main/tutorials/space/activity2
+* url: https://github.com/nomosnow/gioithieu/tutorials/space/activity2
 * imageUrl: https://raw.githubusercontent.com/microsoft/pxt-skillmap-sample/main/img/space/activity2.png
 
 ### space-activity3
