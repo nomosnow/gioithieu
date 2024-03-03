@@ -20,7 +20,6 @@
 ## vietnamese-ca-lon-ca-be
 * name: Cá Lớn nuốt cá bé
 * description: Hướng dẫn tạo game cá lớn nuốt cá bé đơn giản
-* completionUrl: https://microsoft.github.io/pxt-skillmap-sample/certificates/design-a-space-explorer.pdf
 
 ### vietnamese-ca-lon-ca-be-activity1
 * name: Tạo Cá
