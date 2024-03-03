@@ -46,50 +46,48 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 ![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
-Are you ready to customize your ship? 
+Bạn đã sẵn sàng để tùy chỉnh chiếc tàu của mình chưa?
 
-In this tutorial, you'll learn to fire a projectile when the **Ⓐ** button
-is pressed and also how to add special effects.
-
-
-## Customize sprites
-
-The workspace is pre-loaded with code for a flying ship.  
-Be sure to 
-**play with it in the simulator** to see if it works like you expect.
-
----
-
-🔲  Check your player [__*sprite*__](#sprote "2-D image that moves on the screen") 
-and to make sure you're happy with it. 
-
-🔲  If you want to make changes, click the sprite inside the block and design a new 
-kind of vehicle OR turn it into an alien creature using the sprite editor! 👽
+Trong hướng dẫn này, bạn sẽ học cách phóng một viên đạn khi nút Ⓐ được nhấn
+và cũng cách thêm hiệu ứng đặc biệt.
 
 
+## Tùy chỉnh Sprites
 
-## Add a button event
-
-**Time for action!**
-
-Let's launch projectiles when the **Ⓐ** button is pressed!
+Màn hình chính đã được tải trước với code cũ của bạn từ phần trước.
+Hãy chắc chắn rằng chơi với trò chơi trên máy mô phỏng để xem nó có hoạt động như bạn mong đợi không.
 
 ---
 
-🔲 Drag an ``||controller:on [A] button pressed ||`` container into the workspace.
+🔲  Kiểm tra sprite của người chơi
+và đảm bảo bạn hài lòng với nó.
 
-🔲 Snap a   
+🔲  Nếu bạn muốn thay đổi, nhấp vào sprite trong khối code và thiết kế một
+loại tàu mới HOẶC biến nó thành một sinh vật ngoài hành tinh bằng cách sử dụng chương trình chỉnh sửa sprite! 👽
+
+
+
+## Thêm sự kiện xảy ra khi bấm nút
+
+**Đến lúc hành động!**
+
+Hãy phóng đạn khi nút **Ⓐ** được nhấn!
+
+---
+
+🔲 Kéo một khối code lớn ``||controller:on [A] button pressed ||`` và đặt vào màn hình chính.
+
+🔲 Kéo một khối nhỏ
 ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
-block inside of the new container.
+vào trong khối code lớn mới đó.
 
-🔲 Click the grey box inside of the new projectile block to draw your 
-flying object (or select one from the **My Assets** tab.)
+🔲 Nhấp vào ô màu xám bên trong khối đạn mới để vẽ vật bay của bạn(hoặc chọn một trong số những thiết kế có sẵn từ **My Assets**.)
 
 ---
 
 
-**Tip:** Run your code in the simulator and launch a few projectiles 
-by pressing the **Ⓐ** button.  What happens?
+**Mẹo Nhỏ**: Chạy mã của bạn trong bộ mô phỏng và phóng một vài viên đạn
+bằng cách nhấn nút **Ⓐ**. Điều gì sẽ xảy ra?
 
 
 ```blocks
@@ -108,41 +106,40 @@ let projectile = sprites.createProjectileFromSprite(img`
 })
 ```
 
-## Retrospect @unplugged
+## Kiểm tra laị @unplugged
 
-You probably noticed that your projectiles are firing toward the bottom 
-right corner. This is *not helpful* when your enemies are coming from above! Let's take 
-a second to figure out what's happening.
+Bạn có thể đã nhận ra rằng các viên đạn của bạn đang phóng về phía góc dưới
+bên phải. Điều này không hữu ích khi kẻ thù của bạn đang đến từ phía trên! Hãy
+dành một chút thời gian để tìm hiểu xem điều gì đang xảy ra.
 
 ---
 
-The ``||variables:set projectile to||`` block comes preloaded with 
-an [__*argument*__](#argue "extra chunk of information that the block needs") 
-that sets both the [__*vx*__](#whatVX "horizontal velocity") 
-and [__*vy*__](#whatVY "vertical velocity") 
-values to 50.
+Khối code ``||variables:set projectile to||`` được tải trước với
+hai giá trị [__*vx*__](#whatVX " tốc độ ngang") 
+và [__*vy*__](#whatVY " tốc đọ dọc") 
+giá trị là 50.
 
 ```block
 let mySprite: Sprite = null
 let projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 50, 50)
 ```
 
-## Learn Velocity @unplugged
+## Học về vận tốc @unplugged
 
-To change the direction of the projectiles, you need to change the  
-speed they travel in a certain direction.  
-In MakeCode Arcade, we call that the [__*velocity*__](#veloc "speed in a given direction").
+Để thay đổi hướng của các viên đạn, bạn cần thay đổi
+tốc độ chúng di chuyển theo một hướng nhất định.
+Chúng ta gọi đó là [__*vận tốc*__](#veloc "độ nhanh cùng với hướng").
 
-- Change whether they fly left or right by changing the [__*vx*__](#whatX "speed from left to right")  
-- Change whether they fly up or down by changing the [__*vy*__](#whatX "speed from top to bottom")  
-- What happens when you change both?
+- Thay đổi giá trị để chúng bay sang trái hay sang phải bằng cách thay đổi [__*vx*__](#whatX "thay đổi tốc độ từ trái sang phải")  
+- Thay đổi giá trị để chúng bay lên hay xuống bằng cách thay đổi [__*vy*__](#whatX "thay đổi tốc độ từ trên xuống dưới")  
+- Điều gì sẽ xảy ra khi bạn thay đổi cả hai?
 
 ![Directional Projectiles](/static/skillmap/space/vxvy.gif "Round and Round")
 
 
-## Create a projectile
+## Tạo một viên đạn
 
-Play with the __vx__ and __vy__ values of the projectile until they're flying straight up at a decent speed.
+Chơi với các giá trị __vx__ và __vy__ của viên đạn cho đến khi chúng bay thẳng lên với tốc độ ổn định.
 
 ```blocks
 let mySprite: Sprite = null
@@ -161,25 +158,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Custom effects
+## Tùy chỉnh hiệu ứng
 
-💥 Now for some special effects 💥
-
----
-
-🔲 Find 
-``||sprites:[mySprite] start [spray] effect||`` and snap it in at 
-the bottom of the ``||controller:on [A] button pressed ||`` container.  
-
-🔲 Change variable ``||variables:mySprite||`` to ``||variables:projectile||`` if you
-want the effects on your projectiles instead of on your ship.  
-
-🔲 Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!  
+💥 Giờ là lúc để tạo hiệu ứng đặc biệt cho đạn của bạn💥
 
 ---
 
-**Tip:** You can add another ``||sprites:[mySprite] start [spray] effect||`` block
-to add a separate effect on your spaceship
+🔲 Tìm khối
+``||sprites:[mySprite] start [spray] effect||`` và kéo nó vào
+dưới cùng của khối lớn ``||controller:on [A] button pressed ||``.  
+
+🔲 Thay đổi giá trị ``||variables:mySprite||`` to ``||variables:projectile||`` nếu bạn
+muốn các hiệu ứng trên viên đạn của bạn thay vì trên chiếc tàu của bạn.
+
+🔲 Thử các tùy chọn khác từ menu thả xuống ``||sprites:[spray]||`` và chọn cái bạn thích nhất!
+
+---
+
+**Mẹo Nhỏ**: Bạn có thể thêm một khối code ``||sprites:[mySprite] start [spray] effect||`` khác để thêm một hiệu ứng riêng cho tàu vũ trụ của bạn.
 
 
 
@@ -204,12 +200,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ---
 
 
-## Complete 
+## Hoàn thành
 
-🎆 **Congratulations** 🎆
 
-You can now use the direction buttons to move your space plane and
-the **Ⓐ** button to lauch projectiles!
+🎆 **Chúc mừng bạn** 🎆
 
-Play your game in the simulator, then click "Finish" so you can publish
-to share with family and friends.
+Bây giờ bạn có thể sử dụng các nút hướng để di chuyển chiếc máy bay không gian của bạn và
+nút **Ⓐ** để phóng các viên đạn!
+
+Chơi trò của bạn trong bộ mô phỏng, sau đó nhấp vào "Finish" để kết thúc và mở khoá cho phần học tiếp theo.
