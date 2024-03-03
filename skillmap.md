@@ -63,7 +63,6 @@
 
 * name: Nạp nhiên liệu
 * description: Sử dụng một tiện ích mở rộng để thêm một bảng đo nhiên liệu vào tàu của bạn. Đảm bảo nạp nhiên liệu thường xuyên!
-* kind: completion
 
 * url: https://github.com/nomosnow/gioithieu/tutorials/space/activity4
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/space/activity4.png
