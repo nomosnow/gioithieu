@@ -21,7 +21,7 @@
 * name: Thiết kế Game Khám Phá Không Gian
 * description: Hãy khám phá sâu thẳm của không gian! Chúng ta sẽ thiết kế một phương tiện để du hành không gian, thêm một số kẻ thù và thực hiện việc chiếm các hành tinh trong vũ trụ.
 * completionUrl: https://microsoft.github.io/pxt-skillmap-sample/certificates/design-a-space-explorer.pdf
-
+* allowcodecarryover: true
 
 ### space-activity1
 
