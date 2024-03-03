@@ -1,15 +1,6 @@
 # Game: Cá Lớn Nuốt Cá Bé
 
-### @explicitHints true
-
-
-### ~button /#tutorial:/tutorials/chase-the-pizza
-
-Try this tutorial!
-
-### ~
-
-## Giới thiệu @showdialog
+## Giới Thiệu @unplugged
 
 Mục đích của game này là ăn cá con để đạt được nhiều điểm nhất.
 
