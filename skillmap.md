@@ -49,9 +49,9 @@
 
 ### space-activity2
 
-* name: Projectiles
+* name: Phóng đạn
 * type: tutorial
-* description: Customize your ship with projectiles and effects.
+* description: Tùy chỉnh tàu của bạn với các đạn và tạo thêm hiệu ứng.
 * tags: easy, projectiles, kinds
 * next: space-activity3
 
@@ -60,8 +60,8 @@
 
 ### space-activity3
 
-* name: Enemies
-* description: Watch out for danger! Add enemies and lives to your game.
+* name: Tạo kẻ thù
+* description: Hãy cẩn thận với nguy hiểm! Thêm kẻ thù và mạng sống vào trò chơi của bạn.
 * type: tutorial
 * tags: easy, enemies, kinds
 * next: space-activity4
@@ -71,10 +71,9 @@
 
 ### space-activity4
 
-* name: Fuel Up
+* name: Nạp nhiên liệu
 * type: tutorial
-* description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
-* tags: intermediate, extensions
+* description: Sử dụng một tiện ích mở rộng để thêm một bảng đo nhiên liệu vào tàu của bạn. Đảm bảo nạp nhiên liệu thường xuyên!
 
 
 * url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/space/activity4
