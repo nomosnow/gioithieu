@@ -1,25 +1,21 @@
-# Space Explorer
+# Thám hiểm không gian
 
 
 ## Introduction @unplugged
 
-** Let's explore the depths of space! **
+** Hãy khám phá những cung đường của không gian! **
 
-In this tutorial, you'll design a spaceship for your journey.
+Trong hướng dẫn này, bạn sẽ thiết kế một chiếc tàu vũ trụ cho hành trình của mình.
 
 ![Flying through space](/static/skillmap/space/space1.gif "Blasting through a starfield" )
 
-## Set the scene
-**Give 'em something to look at** 🔭
+## Thiết lập cảnh quan
 
 ---
 
+🔲 Kéo khối code ``||scene:start screen [confetti] effect ⊕||`` từ phần   ``||scene:Scene||`` và đặt vào khối code lớn ``||loops:on start||`` đã có sẵn ở màn hình chính.
 
-🔲 Drag the ``||scene:start screen [confetti] effect ⊕||`` from the  ``||scene:Scene||`` category and
-into the ``||loops:on start||`` block that's already in the workspace.
-
-🔲 Next, select ``||scene:star field||`` (instead of ``||scene:confetti||``) from the dropdown
-and watch as you blast into space! 🚀 
+🔲 Tiếp theo, chọn ``||scene:star field||`` (thay vì ``||scene:confetti||``) từ nhiều lựa chọn và ngắm xem quang cảnh ngoài không gian.
 
 
 ---
@@ -32,22 +28,22 @@ effects.starField.startScreenEffect()
 
 
 
-## Draw your ship
-**🧑🏿‍🚀 Time to choose our ship! 👩🏾‍🚀**
+## Vẽ chiếc tàu của bạn
+**🧑🏿‍🚀 Đến lúc chọn tàu của chúng ta! 👩🏾‍🚀**
 
 ---
 
-🔲 From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block  and place it at the end of the ``||loops:on start||`` container.
+🔲 Từ phần  ``||sprites:Sprites||`` kéo khối code ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+và đặt nó ở cuối khối code chính ``||loops:on start||``.
 
-🔲 Click on the grey box in the middle of your
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
-to design a ship of your own! Are you a rusty pile of scraps or a sleek, futuristic rocket?
+🔲 Nhấp vào hộp màu xám ở giữa của khối
+ ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+để thiết kế một chiếc tàu của riêng bạn! Chiếc tàu này có phải là một đống phế liệu gỉ sét hay một tên lửa mạnh mẽ tương lai hóa?
 
 ---
 
-**Tip:** Don't feel like drawing your ship? Once you're in the sprite editor,
-flip to the gallery and choose from premade images.
+**Mẹo Nhỏ:** Nếu Bạn không muốn vẽ chiếc tàu? Khi bạn ở trong trình chỉnh sửa sprite, bạn có thể
+chuyển sang thư viện và chọn từ các hình ảnh sẵn có.
 
 ```blocks
 effects.starField.startScreenEffect()
@@ -72,17 +68,17 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Control your ship
+## Điều khiển chiếc tàu của bạn
 
-🌟 Let's get your ship moving 🌟
+🌟 Hãy làm cho chiếc tàu của bạn di chuyển 🌟
 
 ---
 
-🔲 Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
-and drag it into the bottom of the ``||loops:on start||`` container. 
+🔲 Tìm khối code nhỏ ``||controller:move [mySprite] with buttons ⊕||`` 
+và kéo nó vào đoạn cuối của khối code lớn ``||loops:on start||``. 
 
-** Now try moving your ship around in the simulator! **  
-Your ship will move with the joystick, arrow keys, or **W A S D** keys.  
+**Bây giờ hãy thử di chuyển tàu của bạn trong bộ mô phỏng!**
+Tàu của bạn sẽ di chuyển với phím mũi tên hoặc phím W A S D.  
 
 
 
@@ -110,15 +106,16 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Stay in screen
+## Giữ tàu trong màn hình
 
-**Uh-oh, if you move off screen, your ship disappears!**
+**Ôi không, nếu bạn di chuyển ra khỏi màn hình, tàu của bạn sẽ biến mất!**
 
 ---
 
-🔲 To keep your ship from exploring beyond the edges, find
- the ``||sprites:set [mySprite] stay in screen <on>||`` block and
-snap it in at the end of the program.
+🔲 Để giữ cho tàu của bạn không khám phá ra màn hình, tìm
+ khối code nhỏ
+ ``||sprites:set [mySprite] stay in screen <on>||`` 
+ chọn chế độ bật (**on**) kéo nó vào cuối chương trình.
  
 
 
@@ -151,24 +148,23 @@ mySprite.setStayInScreen(true)
 
 ## Finale @unplugged
 
-**Great Job!**
+**Bạn làm tốt lắm!**
 
 ---
 
-Now be sure to play your game on the simulator
-before you click finish on the tutorial.  
+Bây giờ hãy chắc chắn rằng bạn chơi trò chơi của mình trên bộ mô phỏng
+trước khi bạn nhấp vào kết thúc trên hướng dẫn này. 
 
 ![You in space](/static/skillmap/space/space1end.gif "Blasting through your own game" )
 
-Is everything how you want it? You can always go back and edit steps if you find out 
-that you'd like them to work differently.
+Mọi thứ có ổn không? Bạn luôn có thể quay lại các bước trước và chỉnh sửa nếu bạn phát hiện ra điều gì đó bất hợp lý.
 
 
 
-## Byeeee
+## Tạm biệt
 
-** 🚀 That's it! 🚀**
+** 🚀 Chỉ có vậy thôi 🚀**
 
-You're all set to travel the universe!
+Bạn đã sẵn sàng để du hành vũ trụ!
 
-Click **"Finish"** so you can publish your game to share with family and friends.
+Nhấp vào **"Finish"** để thoát ra
