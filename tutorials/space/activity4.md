@@ -210,21 +210,18 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 7
-When your ship overlaps fuel, you'll want the gas to disappear as the tank refills.
+## Bước 7
+Khi tàu của bạn chạm với nhiên liệu, bạn muốn nhiên liệu biến mất khi bình nhiên liệu được làm đầy lại.
 <hr/>  
 
-🔲 Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. 
+🔲 Kéo một ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+vào màn hình. 
 
-🔲 Change the last argument from ``||sprites:Player||`` to ``||sprites:Gas||``.  
+🔲 Thay đổi lựa chọn  ``||sprites:Player||`` thành ``||sprites:Gas||``.  
 
-🔲 To refill the status bar after grabbing fuel, snag a ``||statusbars:set [statusbar] [value] to [0]||`` block 
-and snap it in to your newest **overlaps** container.  Change the value from **0** to **100**.
+🔲 Để làm đầy lại thanh trạng thái sau khi lấy nhiên liệu, kéo một khối code ``||statusbars:set [statusbar] [value] to [0]||`` và kết nối nó vào khối **overlaps** mới nhất của bạn. Thay đổi giá trị từ **0** thành **100**.
 
-🔲 Finally, make sure the used fuel disappears by snapping a ``||sprites:destroy [mySprite] ⊕||`` block 
-into the bottom of the same **overlaps** container and replacing
-``||variables:mySprite||`` with ``||variables:otherSprite||``
+🔲 Cuối cùng, đảm bảo nhiên liệu đã sử dụng biến mất bằng cách kéo một khối``||sprites:destroy [mySprite] ⊕||`` vào phía cuối của **overlaps** và đổi giá trị ``||variables:mySprite||`` thành ``||variables:otherSprite||``
 
 ![Grabbing variable from block](/static/skillmaps/space/give-var.gif "So that's how you do that!")
 
@@ -243,26 +240,22 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 })
 ```
 
-## Step 9
-🌌 If you run out of fuel, you'll be marooned in space! 🌌
+## Bước 9
+🌌 Nếu bạn hết nhiên liệu, bạn sẽ bị bỏ lại trong không gian! 🌌
 
-The threat is real.
+Đây là mối đe dọa là thực sự.
+
 <hr/>
-🔲 To add consequences for an empty status bar, drag a 
+🔲 Để thêm hậu quả cho việc hết nhiên liệu, kéo một
 ``||statusbars:on status bar kind [Health] zero [status]||`` 
-container into the workspace.
+vào màn hình chính.
 
-🔲 Change the status bar kind to **Energy**. 
+🔲 Thay đổi loại thanh trạng thái năng lượng thành **Energy**.(Trong tiếng anh Energy nghĩa là năng lượng) 
 
-🔲 Snap a ``||game:game over <LOSE>||`` block inside as the ultimate fate.
+🔲 Kéo một khối code ``||game:game over <LOSE>||`` vào trong như số phận cuối cùng.
 
 <hr/>
-And that's it!  You should have a fully functioning game that you can save to your project
-gallery and share with friends!
-
-BUT...you don't have to stop there.  Once your game is in your gallery, you can
-experiment with all of the blocks in your toolbox and find many other
-exciting and special ways to customize your adventure.
+Và đó là tất cả!  Bạn nên có một trò chơi hoàn chỉnh.
 <br/>
 
 ```blocks
