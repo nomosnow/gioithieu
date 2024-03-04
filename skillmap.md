@@ -76,7 +76,7 @@
 * description: Thêm vật thể lạ ngoài hành tinh
 * type: tutorial
 * next: space-cert-1
-* allowcodecarryover: false
+* allowcodecarryover: true
 
 * url: https://github.com/nomosnow/gioithieu/tutorials/space/activity5
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/space/activity5.png
