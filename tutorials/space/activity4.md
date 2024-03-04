@@ -1,50 +1,43 @@
-# Adding Fuel
+# Tiếp Thêm Năng Lượng
+## Giới Thiệu @unplugged
 
-## Introduction @unplugged
+Đến lúc nạp năng lượng!
 
-Time to refuel! 
+Trong hướng dẫn này, chúng ta sẽ thêm một thanh nhiên liệu vào tàu vũ trụ của bạn để giảm dần khi bạn đi khám phá ngoài không gian.
 
-In this tutorial we'll add a fuel bar to your spaceship
-that depleats as you travel. 
-
-Make sure to catch the powerups to keep your
-ship from breaking down!
+Hãy chắc chắn bắt các vật phẩm năng lượng để giữ cho tàu không bị hỏng!
 
 ![Fuel Up!](/static/skillmaps/space/eat-gas.gif "Is it raining...tacos?")
 
 
-## Step 1
-😵 The starter code is taking up a lot of room! 
-Don't worry, the Arcade workspace will expand for you. Just scroll up and
-over (or down and over) to keep building.
+## Bước 1
+😵 Đoạn code khởi đầu đang chiếm rất nhiều không gian!
+Đừng lo lắng, không gian làm việc Arcade sẽ mở rộng cho bạn. Chỉ cần cuộn lên và qua (hoặc xuống và qua) để tiếp tục viết code game nha.
 <hr/>
 
-🔲 Take a peek into the new ``||statusbars:Status Bars||`` category.
-You'll find ``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
-Drag one to the end of the ``||loops:on start||`` container.
+🔲 Hãy nhìn vào mục mới  ``||statusbars:Status Bars||``.
+Bạn sẽ tìm thấy ``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
+Kéo một cái vào cuối khối chính ``||loops:on start||``.
 
-🔲 To keep track of how much *gas* is left, set the argument for 
-**statusbar** kind to **Energy**.
+🔲 Để theo dõi lượng còn bao nhiêu nhiên liệu còn lại, đặt thông số cho
+**statusbar** thành **Energy**.
 <hr/>
->> *Tip: The ``||statusbars:Status Bars||`` category is an 
-[__extension__](#extendo "a category that provides extended capabilites to MakeCode"). 
-To see what else you can do using extensions, open a game in your gallery,
-click ``||statusbars:˅ Advanced||`` and choose ``||extension:Extensions||``*
 
 ```block
 let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 ```
 
-## Step 2
-If we want the status bar to show the details of **mySprite**, we'll need to link the two together.
+## Bước 2
+Nếu chúng ta muốn thanh trạng thái hiển thị chi tiết của **mySprite**, chúng ta sẽ cần liên kết hai cái với nhau.
+
 <hr/>
 
-🔲 Drop ``||statusbars:attach [statusbar] to [mySprite] ⊕||`` 
-into the end of the ``||loops:on start||`` container.
+🔲 Kéo ``||statusbars:attach [statusbar] to [mySprite] ⊕||`` 
+vào cuối khối lớn ``||loops:on start||``.
 
-🔲 Click **⊕** on the new block to reveal options
- to change the position of the status bar in relation to **mySprite**. 
- Can you figure out how to get the bar to show up *below* your ship?
+🔲 Nhấp vào **⊕** trên khối mới để hiện các tùy chọn
+để thay đổi vị trí của thanh trạng thái máu liên quan đến **mySprite**.
+Bạn có thể tìm ra cách để thanh máu xuất hiện dưới tàu của bạn không?
 
 <br/>
 
@@ -54,22 +47,23 @@ let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -25, 0)
 ```
 
-## Step 3
-⏰ The longer you're in the air, the more fuel you use ⏰  
+## Bước 3
+⏰ Càng lâu bạn ở trong không trung, bạn sẽ sử dụng nhiều nhiên liệu hơn ⏰
 
-Here's how to make the fuel go down as time passes. 
-<hr/>
-🔲 Drag an ``||game:on game update every [500] ms||`` container into the 
-workspace. Adjust the time argument to **300 ms**.
-
-🔲 Drop a ``||statusbars:change [statusbar] [value] by [0]||``
-block into the **game update** container.
-
-🔲 Change the amount the status bar changes from **0** to **-1**. 
+Dưới đây là cách làm cho nhiên liệu giảm dần khi thời gian trôi qua. 
 <hr/>
 
->> *Tip: Remember this step later. If the fuel runs out too fast in 
-gameplay, you can come back and adjust these blocks.*
+🔲 Kéo một khối ``||game:on game update every [500] ms||`` vào
+ màn hình chính. Điều chỉnh đối số thời gian thành **300 ms**.
+
+🔲 Kéo một khối  ``||statusbars:change [statusbar] [value] by [0]||``
+vào khối **game update**.
+
+🔲 Thay đổi số lượng thanh trạng thái máu thay đổi từ **0** thành **-1**.
+<hr/>
+
+>> *Mẹo: Nhớ bước này sau này. Nếu nhiên liệu hết quá nhanh trong
+trò chơi, bạn có thể quay lại và điều chỉnh các khối này.*
 
 
 ```blocks
@@ -79,30 +73,28 @@ game.onUpdateInterval(300, function () {
 })
 ```
 
-## Step 4
-⛽ Time to refuel ⛽
+## Bước 4
+⛽ Đến lúc nạp nhiên liệu ⛽
 
-You can drop gas canisters, energy crystals, or juicy hamburgers...whatever 
-makes sense for the vessel you have.
+Bạn có thể thả hộp nhiên liệu, tinh thể năng lượng, hoặc bánh hamburger ngon...bất cứ thứ gì
+phù hợp với tàu bạn có.
 
-The code for dropping fuel is a lot like the code for dropping enemies. 
-For a refresher on how things work, find the **myEnemy** blocks in the
-workspace and use them as a guide.
+Code để thả nhiên liệu khá giống với để để thả kẻ thù.
+Để làm mới về cách thức hoạt động, tìm các khối **myEnemy** màn hình chính và sử dụng chúng như một hướng dẫn.
 <hr/>
-🔲 Drag a _new_  ``||game:on game update every [500] ms||`` container 
-into the workspace and change the interval to **5 seconds (5000 ms)**.
+🔲 Kéo một khối ``||game:on game update every [500] ms||`` mới vào màn hình chính và thay đổi khoảng thời gian thành **5 seconds (5000 ms)**. (5 giây)
 
-🔲 Snap a
+🔲 Thả một khối
 ``||variables:set [projectile2] to||`` ``||sprites:projectile [ ] from side with vx [50] vy [50]||``
-block inside the newest **on game update** container.
+  vào bên trong **on game update**.
 
-🔲 Click ``||variables:[projectile2]||`` and rename the sprite ``||variables:[myFuel]||``.
+🔲 Nhấp vào ``||variables:[projectile2]||`` và đổi tên sprite thành ``||variables:[myFuel]||``.
 
-🔲 Click on the grey square to bring up the sprite editor so you can
-draw a fuel sprite (or choose one from the gallery.) 
+🔲 Nhấp vào hình vuông màu xám để hiển thị trình soạn thảo sprite để bạn có thể
+vẽ một sprite nhiên liệu (hoặc chọn một trong bộ sưu tập **Gallery**.) 
 
-🔲 Play with the **vx** and **vy** arguments of the fuel until it's falling
-straight down at a decent speed.
+🔲 Đổi các đơn vị **vx** và **vy** của nhiên liệu cho đến khi nó rơi
+thẳng xuống với tốc độ khá.
 
 <br/>
 
@@ -129,25 +121,21 @@ game.onUpdateInterval(5000, function () {
         `, 0, 50)
 })
 ```
-## Step 5
+## Bước 5
+Giống như với kẻ thù, chúng ta muốn nhiên liệu rơi từ một vị trí ngẫu nhiên
+trên đỉnh màn hình.
 
-Just like with the enemies, we'll want the fuel to drop from a random position
-across the top of the screen. 
 <hr/>
-🔲 Connect a ``||sprites:set [mySprite] [x] to [0]||`` block at the 
-bottom of the ``||game:on game update every [5000] ms||`` container.  
+🔲 Kết nối một khối ``||sprites:set [mySprite] [x] to [0]||`` ở phía dưới của ``||game:on game update every [5000] ms||``.  
 
-🔲 To make sure we're acting on the right sprites, use the dropdown in the 
-new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
+🔲 Để đảm bảo chúng ta đang sử dụng đúng các sprite, thay đổi tên``||variables:mySprite||`` to ``||variables:myFuel||``.
 
-🔲 To set a random [__*x*__](#setX "horizontal location") 
-for the fuel, grab a 
-``||Math:pick random [0] to [10]||`` block
-and connect it to replace the **0** argument in the 
-``||sprites:set [mySprite] [x] to [0]||`` block.
+🔲 Để đặt một [__*x*__](#setX "vị trí chiều ngang")  ngẫu nhiên cho nhiên liệu, kéo một
+khối
+``||Math:pick random [0] to [10]||`` và kết nối nó để thay thế đối số **0** trong khối code
+``||sprites:set [mySprite] [x] to [0]||``.
 
-🔲 Update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
-maximum argument to **155**. 
+🔲 Cập nhật giá trị tối thiểu của khối code``||Math:pick random [0] to [10]||`` thành **5** và giá trị tối đa thành **155**. 
 <hr/>
 
 ```blocks
@@ -179,17 +167,16 @@ game.onUpdateInterval(5000, function () {
 })
 ```
 
-## Step 6
-
-Now we need to put our **myFuel** sprite into the _gas_ class.
+## Bước 6
+Bây giờ chúng ta cần đặt chủng loại sprite **myFuel**  **GAS**.
 <hr/>
-🔲 Snap a ``||variables:set [mySprite] kind to [Player]||`` block 
-into the bottom of the newest **on game update** container.
+🔲 Kéo một  ``||variables:set [mySprite] kind to [Player]||`` 
+vào dưới cùng của khối chính **on game update**.
 
-🔲 Change ``||variables:mySprite||`` to ``||variables:myFuel||``. 
+🔲 Thay đổi  ``||variables:mySprite||`` thành ``||variables:myFuel||``. 
 
-🔲 Click ``||sprites:Player||`` to get the menu, then choose
-``||sprites:Add a new kind...||`` and create the type **Gas**.  
+🔲 ấn ``||sprites:Player||`` rồi chọn
+``||sprites:Add a new kind...||`` viết vào **GAS**.  
 <br/>
 
 ```blocks
