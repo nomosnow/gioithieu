@@ -61,30 +61,29 @@ scene.cameraShake(4, 500)
 ```
 
 
+## Giới Thiệu @unplugged
 
+**Du hành vượt vũ trụ thật sự rất nguy hiểm!**
 
-## Introduction @unplugged
-
-**Intergalactic travel is dangerous!**
-
-Let's add some enemies for your ship to avoid.  
-These could be asteroids, radioactive debris, or angry space sharks!
+Hãy thêm vào một số kẻ thù để tàu của bạn tránh né.
+Chúng có thể là đá hải vật, mảnh vụn phóng xạ hoặc cá mập không gian tức giận!
 
 ![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
 
-## Step 1
 
-**👾 Feel like making enemies rain from the sky? 👾**
+## Bước 1
 
-Let's add some code that will drop an enemy toward the ship every second or so.
+**👾Tạo kẻ thù rơi từ trên trời xuống không? 👾**
+
+Hãy thêm một số khối code để thả một kẻ thù về phía tàu mỗi giây hoặc như vậy.
 
 ---
  
-🔲 Add an ``||game:on game update every [500] ms||`` container to the workspace  
+🔲 Thêm một khối code``||game:on game update every [500] ms||`` 
 
-🔲 Change the last argument to **1000** [__*ms*__](#millis "milliseconds...aka 1/1000 of a second") 
-(or pick **1 second** from the dropdown)    
+🔲 Thay đổi đối số cuối cùng thành **1000** [__*ms*__](#millis "milliseconds...aka 1/1000 of a second") 
+(ohoặc chọn **1s** giây từ menu thả xuống)    
 <br/>
 
 ```blocks
@@ -92,16 +91,17 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 2
+## Bước 2
 
-🔲 In the ``||sprites:Sprites||`` category, find the
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||`` block
-and drag it into the new **on game update** container.
+🔲 Trong phần ``||sprites:Sprites||`` tìm khối 
+``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``
+và kéo vào khối code lớn **on game update**.
 
-🔲 Click on the ``||variables:[projectile2]||`` value inside the new block and 
-select "Rename variable..."  
+🔲 Nhấp vào giá trị ``||variables:[projectile2]||`` bên trong khối mới và
+chọn "Rename variable..." để đổi tên.
 
-🔲 Change the variable name to ``||variables:myEnemy||`` so we know these are the baddies.  
+🔲 Thay đổi tên biến thành ``||variables:myEnemy||`` để chúng ta biết rằng đó là kẻ thù.  
+<br/> 
 <br/>
 ```blocks
 let myEnemy: Sprite = null
@@ -128,16 +128,16 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 3
-**🎆 Let's get the enemies moving in the right direction 🎆**
+## Bước 3
+**🎆 Hãy cho kẻ thù di chuyển theo hướng đúng 🎆**
 
 ---
 
-🔲 Click the grey square inside the new block to design your enemy  
-(or choose one from the gallery).  
+🔲 Nhấp vào hình vuông màu xám bên trong khối mới để thiết kế kẻ thù của bạn
+(hoặc chọn một trong số đó từ thư viện **galery**).
 
-🔲 Play with the **vx** and **vy** values of **myEnemy** until 
-your new sprites are falling straight down the side of the screen. 
+🔲 Điều chỉnh các giá trị **vx** và **vy** của **myEnemy** cho đến khi
+các hình mới của bạn đang rơi thẳng xuống bên cạnh màn hình. 
 
 
 ```blocks
@@ -165,34 +165,32 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 4
+## Bước 4
 
-
-Enemies aren't likely to hit the ship if they're all the way off to the side, 
-so let's add an element of surprise using [__*random numbers*__](#randos "numbers appearing seemingly without a predictable pattern") .
-
----
-
-
-🔲 Snap a ``||sprites:set [mySprite] [x] to [0]||`` block into the 
-end of the **on game update** container.  
-
-🔲 To make sure we're acting on the right sprites, use the dropdown in the 
-new block to change ``||variables:mySprite||`` to ``||variables:myEnemy||``.
-
-🔲 Set a random [__*x*__](#setX "horizontal location") 
-for the enemies using a
-``||Math:pick random [0] to [10]||`` block from the ``||Math:Math||`` category.
-Connect it to replace the **0** in the  **set mySprite x** block.
-
-🔲 Finally, update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
-maximum argument to **155**. 
+Kẻ thù không thể gây ra vụ nổ tàu nếu chúng đều ở ngoài lề,
+vì vậy hãy thêm một chút bất ngờ bằng cách sử dụng [__*random numbers*__](#randos "numbers appearing seemingly without a predictable pattern") .
 
 ---
 
-**Tip:** The Arcade screen is 160px wide, 
-so you could make your enemies fall anywhere between 0 and 160 
-and still be able to see a piece of them.
+
+🔲 Kéo một khối code``||sprites:set [mySprite] [x] to [0]||`` vào cuối của
+khối **on game update**.  
+
+🔲 Để chắc chắn rằng chúng ta đang tác động vào đúng nhân vật,
+sử dụng menu thả xuống trong khối mới để thay đổi ``||variables:mySprite||`` to ``||variables:myEnemy||``.
+
+🔲 Chọn một [__*x*__](#setX " vị trí ngang)  ngẫu nhiên cho kẻ thù, sử dụng một khối code 
+``||Math:pick random [0] to [10]||`` từ ``||Math:Math||``.
+Kết nối nó để thay thế **0** trong khối code **set mySprite x**.
+
+🔲 Cuối cùng, cập nhật đối số tối thiểu của khối code 
+``||Math:pick random [0] to [10]||`` thành **5** và đối số tối đa thành **155**. 
+
+---
+
+**Gợi ý**: Màn hình máy giả lập có chiều rộng là 160px,
+vì vậy bạn có thể làm cho kẻ thù của bạn rơi ở bất kỳ nơi nào giữa 0 và 160
+và vẫn có thể nhìn thấy chúng.
 
 ```blocks
 let myEnemy: Sprite = null
@@ -222,19 +220,19 @@ game.onUpdateInterval(1000, function () {
 ```
 
 
-## Step 5
+## Bước 5
 
-You might want to add lots of different kinds of enemies plummeting from above.
-We can make sure they all have the same effect using the 
-"**Enemy**" [__*class*__](#withClass "a label you give a particular group so you can refer to it later").
+Có thể bạn muốn thêm nhiều loại kẻ thù khác nhau rơi từ trên trời xuống.
+Chúng ta có thể đảm bảo rằng tất cả chúng đều có cùng một hiệu ứng bằng cách sử dụng cùng một chủng loại
+"**Enemy**".
 
 ---
 
-🔲 Snap a ``||sprites:set [mySprite] kind to [Player]||`` block into the bottom of the 
-**on game update** container. 
+🔲 Kéo một khối ``||sprites:set [mySprite] kind to [Player]||`` vào dưới cùng của
+khối chính **on game update**. 
 
-🔲 Change ``||variables:mySprite||`` to ``||variables:myEnemy||``, then choose 
- ``||sprites:Enemy||`` as the kind.  
+🔲 Thay đổi ``||variables:mySprite||`` thành ``||variables:myEnemy||``, sau đó chọn 
+ ``||sprites:Enemy||`` thành loại.  
  <br/>
 
 
@@ -266,29 +264,26 @@ game.onUpdateInterval(1000, function () {
 ```
 
 
-
-
 ## Step 6
 
 
-**💥 Time to create some enemy behavior 💥**
+**💥 Đến lúc tạo hành vi cho kẻ thù 💥**
 
-To add excitement to the game, let's make something happen when an enemy
-collides with our ship. 
-
----
-
-
-🔲 Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. 
-
-🔲 Change the last argument from ``||variables:Player||`` to ``||variables:Enemy||``.
+Để tạo thêm sự hứng thú cho trò chơi, hãy tạo một sự kiện khi một kẻ thù va chạm với tàu của chúng ta.
 
 ---
 
-**Tip:** Don't try to change "sprite" → "mySprite" or "otherSprite" → "myEnemy".
-The "sprite" and "otherSprite" arguments here describe two general kinds of sprites on the screen
-(not the specific creations we gave names to earlier.) 
+
+🔲 Kéo một khối code ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+vào màn hình chính
+
+🔲 Thay đổi ``||variables:Player||`` thành ``||variables:Enemy||``.
+
+---
+
+**Mẹo**: Đừng cố gắng thay đổi "sprite" → "mySprite" hoặc "otherSprite" → "myEnemy".
+Các đối số "sprite" và "otherSprite" ở đây mô tả hai loại sprite chung trên màn hình
+(không phải là các tạo vật cụ thể mà chúng ta đã đặt tên trước đó.)
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -296,30 +291,29 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 7
+## Bước 7
 
-When the enemy collides with the ship, 
-we want it to subtract a life...then disappear. 
+Khi kẻ thù va chạm với tàu,
+chúng ta muốn nó giảm một mạng sống... rồi biến mất. 
 
 ---
 
 
-🔲 Grab the ``||info:change life by [-1]||`` block from the ``||info:Info||`` category and snap it into the 
-**on player overlaps enemy** container. 
-That removes a life from the player every time it's hit by an enemy.
+🔲 Kéo một khối code ``||info:change life by [-1]||`` từ phần ``||info:Info||`` vào khối lớn
+**on player overlaps enemy**. 
+Điều này loại bỏ một mạng sống từ người chơi mỗi khi bị kẻ thù đánh.
 
-🔲 Find the ``||sprites:destroy [mySprite] ⊕||`` block and snap it below the previous block. 
+🔲 Tìm khối code ``||sprites:destroy [mySprite] ⊕||`` và kéo nó xuống dưới khối trước.
 
-🔲 To tell the **destroy** block that you want it to affect the overlapping enemy, 
-click on the ``||variables:otherSprite||`` variable from the top of the 
-**overlaps** container and drag it down to replace the 
-``||variables:mySprite||`` argument in ``||sprites:destroy [mySprite] ⊕||``.
+🔲Để cho khối code **destroy** ảnh hưởng đến kẻ thù chạm vào thuyền của mình, 
+ấn vào ``||variables:otherSprite||``từ **overlaps** và kéo nó xuống thay thế phần 
+``||variables:mySprite||`` từ ``||sprites:destroy [mySprite] ⊕||``.
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
 ---
 
-**Tip:** Click the __⊕__ on the ``||sprites:destroy [otherSprite] ⊕||`` block to get
-a menu of effects to display upon your enemy's demise!
+**Mẹo**: Nhấn ⊕ trên khối ``||sprites:destroy [otherSprite] ⊕||`` để có
+một menu hiệu ứng hiển thị khi kẻ thù của bạn bị tiêu diệt!
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -328,30 +322,28 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 8
+## Bước 8
 
-**🌍 Time to save the world 🌏**
+**🌍 Đến lúc cứu thế giới 🌏**
 
-Another **overlap** container will help our projectiles
-destroy our enemies on impact.
+Thêm một **overlap** khác sẽ giúp các đạn đạo của chúng ta
+tiêu diệt kẻ thù của chúng ta khi va chạm với chúng.
 
 ---
 
 
-🔲 Drag another ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace.
+🔲 Kéo một khối code``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` khác vào màn hình chính. 
 
-🔲 Change the first kind to ``||sprites:Enemy||`` and the second kind to
+🔲 Thay đổi chủng loại đầu tiên thành ``||sprites:Enemy||`` và chủng loại thứ hai thành
 ``||sprites:Projectile||``. 
 
-🔲 Inside, add two ``||sprites:destroy [mySprite] ⊕||`` blocks, then change the arguments
-so that one destroys the enemy (``||variables:sprite||``) and the other 
-destroys your projectile (``||variables:otherSprite||``).
+🔲 Bên trong, thêm hai khối code ``||sprites:destroy [mySprite] ⊕||`` và sau đó thay đổi các đối số
+để phá hủy kẻ thù(``||variables:sprite||``) và cùng một lúc khác phá huỷ đạn(``||variables:otherSprite||``).
 
 ---
 
-**Tip:** Don't forget to hit that __⊕__ button on the **destroy** block to get
-some spectacular effects when your projectile makes contact!
+**Mẹo**: Đừng quên nhấn **⊕** trên khối **destroy** để có
+một số hiệu ứng ngoạn mục khi viên đạn của bạn va chạm!
 
 ```blocks
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -360,12 +352,11 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 })
 ```
 
-## Complete 
+## Hoàn thành 
 
-**Congratulations**
+**Chúc mừng Bạn**
 
-Now you have a full barrage of enemies to combat!  
-Don't forget to try your game in the simulator before you click "Finish".
+Bây giờ bạn đã có một loạt kẻ thù đầy đủ để chiến đấu!
+Đừng quên thử trò chơi của bạn trên game mô phỏng trước khi nhấp vào "Done".
 
-Once you have it like you want it, click the finish button get back to 
-the skillmap where you can share with family and friends!
+Khi bạn đã có trò chơi như mong muốn, nhấp vào nút "Done" để trở lại bản đồ và chọn phần kế tiếp.
