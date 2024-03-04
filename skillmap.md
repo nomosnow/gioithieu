@@ -64,31 +64,20 @@
 * name: Nạp nhiên liệu
 * description: Sử dụng một tiện ích mở rộng để thêm một bảng đo nhiên liệu vào tàu của bạn. Đảm bảo nạp nhiên liệu thường xuyên!
 * type: tutorial
-* next: space-activity5
-* allowcodecarryover: true
+* next: space-cert-1
 
 * url: https://github.com/nomosnow/gioithieu/tutorials/space/activity4
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/space/activity4.png
 
-### space-activity5
-
-* name: Thêm vật thể ngoài hành tinh
-* description: Thêm vật thể lạ ngoài hành tinh
-* type: tutorial
-* next: space-cert-1
-* allowcodecarryover: true
-
-* url: https://github.com/nomosnow/gioithieu/tutorials/space/activity5
-* imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/space/activity5.png
 
 ### space-cert-1
 * name: Congrats!
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/jungle-cert.pdf
+* url: https://github.com/nomosnow/gioithieu/certificates/understanding-arcade-tutorials.pdf
 * rewards:
         * certificate:
-            * url: [/static/skillmap/certificates/jungle-cert.pdf](https://github.com/nomosnow/gioithieu/certificates/understanding-arcade-tutorials.pdf)
+            * url: https://github.com/nomosnow/gioithieu/certificates/understanding-arcade-tutorials.pdf
 
 
 
