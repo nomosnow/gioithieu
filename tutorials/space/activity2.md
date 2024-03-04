@@ -74,7 +74,7 @@ Hãy phóng đạn khi nút **Ⓐ** được nhấn!
 
 🔲 Kéo một khối code lớn ``||controller:on [A] button pressed ||`` và đặt vào màn hình chính.
 
-🔲 Kéo một khối nhỏ
+🔲 Vào ``||sprites:Sprites||`` , kéo một khối nhỏ
 ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
 vào trong khối code lớn mới đó.
 
