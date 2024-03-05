@@ -74,12 +74,10 @@
 * name: Congrats!
 * kind: completion
 * type: certificate
-* url: https://github.com/nomosnow/gioithieu/certificates/understanding-arcade-tutorials.pdf
+* url: https://raw.githubusercontent.com/nomosnow/gioithieu/main/certificates/understanding-arcade-tutorials.pdf
 * rewards:
         * certificate:
-            * url: https://github.com/nomosnow/gioithieu/certificates/understanding-arcade-tutorials.pdf
-
-
+            * url: https://raw.githubusercontent.com/nomosnow/gioithieu/main/certificates/understanding-arcade-tutorials.pdf
 
 ## platformer
 * name: Learn to Make a Platformer
