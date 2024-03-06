@@ -64,10 +64,20 @@
 * name: Nạp nhiên liệu
 * description: Sử dụng một tiện ích mở rộng để thêm một bảng đo nhiên liệu vào tàu của bạn. Đảm bảo nạp nhiên liệu thường xuyên!
 * type: tutorial
-* next: space-cert-1
+* next: space-challenge
 
 * url: https://github.com/nomosnow/gioithieu/tutorials/space/activity4
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/space/activity4.png
+
+
+### space-challenge
+
+* name: Du hành vượt thời gian thử thách
+* description: Sử dụng kiến thức đã học được tạo một game cho riêng minhf
+* type: tutorial
+* next: space-cert-1
+
+* url: https://github.com/nomosnow/gioithieu/tutorials/space/challenge
 
 
 ### space-cert-1
