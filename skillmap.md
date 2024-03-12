@@ -89,6 +89,7 @@
         * certificate:
             * url: https://raw.githubusercontent.com/nomosnow/gioithieu/main/certificates/understanding-arcade-tutorials.pdf
 
+
 ## platformer
 * name: Learn to Make a Platformer
 * description: A skillmap that takes you through how to build a platformer with multiple levels.

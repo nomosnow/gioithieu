@@ -68,33 +68,40 @@ Hãy tạo một game cho riêng mình
 
 ## Bước 1
 
-Tạo Sprite cho người chơi 
-Đặt Tên cho Sprite của người chơi
-Tạo chủng loại cho sprite của mình
-Làm Sprite có thể di chuyển trên màn hình và không bị đi ra ngoài khỏi màn hình
-
+🔲 Tạo Sprite cho người chơi 
+🔲 Đặt Tên cho Sprite của người chơi
+🔲 Tạo chủng loại cho sprite của mình
+🔲 Làm Sprite có thể di chuyển trên màn hình
+🔲 Sprite không bị đi ra ngoài khỏi màn hình khi di chuyển
 
 
 ## Bước 2
-Tạo Một Viên Đạn cho Sprite của mình. Nên nhớ là chỉnh toạ độ sao cho viên đan được bắn đúng hướng lên trên trời. Viên đạn có thể bắn được khi nhấn nút A.
-Tạo thêm hiệu ứng cho viên đạn sau khi bắn
+
+🔲 Tạo Một Viên Đạn cho Sprite của mình. Nên nhớ là chỉnh toạ độ sao cho viên đạn được bắn đúng hướng lần này bắn từ bên trái sang bên phải. Viên đạn có thể bắn được khi nhấn nút A.
+🔲 Tạo thêm hiệu ứng cho viên đạn sau khi bắn. Hãy chọn hiệu ứng lửa.
 
 
 ## Bước 3
 
+🔲 Tạo thêm kẻ thù sprite.
+🔲 Làm kẻ thù xuất hiện từ bên phải sang bên trái màn hình. Hãy làm nhân vật phản diện di chuyển theo chiều ngang.
+🔲 Khi kẻ thù chạm vào người chơi thì người chơi bị mất máu.
+🔲 kẻ thù bị huỷ diệt khi chạm vào người chơi.
+
 
 ## Bước 4
 
+🔲 Khi đạn bắn trúng kẻ thù thì cả cả đều bị huỷ.
+🔲 Cộng thêm điểm nếu đạn bắn trúng kẻ thù.
 
 ## Bước 5
 
-
-## Step 6
-
-## Bước 7
-
-
-## Bước 8
+🔲 tạo thêm thanh máu cho nhân vật người chơi.
+🔲 Gắn thanh máu liền với nhân vật người chơi.
+🔲 Máu bị tụt dần theo thời gian.
+🔲 Nếu máu bị tụt hết thì người chơi sẽ thua cuộc.
+🔲 Tạo một vật thể sprite mới xuất hiện từ màn hình bên phải di chuyển sang bên trái với tốc độ cao. vật thể xuất hiện theo chu kì 2 giây.
+🔲 Nếu người chơi dùng đạn bắn trúng vật thể. máu sẽ đc tăng lên 30.
 
 ## Hoàn thành 
 
