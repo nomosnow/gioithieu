@@ -59,38 +59,33 @@ scene.setBackgroundColor(11)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Welcome @unplugged
+## Chào mừng @unplugged
 
-Now let's take a look at the [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally") 
-[__*platformer*__](#plat "games that rely on jump and run as their main mechanic").  
+Hãy bắt đầu với [__*sidescrolling*__](#scrolld "Trong lĩnh vực game, các trò chơi được xem từ một bên, với hầu hết hành động diễn ra theo chiều ngang thường được gọi là "side-scrolling games". Trò chơi này thường có cấu trúc màn chơi theo kiểu từ bên trái sang bên phải hoặc ngược lại, và người chơi thường điều khiển nhân vật của mình để vượt qua các trở ngại và đối đầu với kẻ địch. Các ví dụ phổ biến về side-scrolling games bao gồm Mario Bros, Sonic the Hedgehog, và Contra.") 
+[__*platformer*__](#plat "các trò chơi với cơ chế chính là nhảy và chạy").  
 
-This kind of game peeks in on the action from the side, using "jump" and "run"
-as the main mechanic.  
+Các trò chơi dạng này thường có góc nhìn ngang với nhân vật, sử dụng cơ chế chính là nhảy và chạy đối với nhân vật được diều khiển.  
 
-By the time you finish this set of tutorials, you should know all you need 
-to make a fun and engaging arcade game worth sharing.
+Hoàn thành phần hướng dẫn này, bạn sẽ chuẩn bị được nền tảng cơ bản cho việc tạo ra một trò chơi vui vẻ và chia sẻ nó với bạn bè.
 
-![Our first platformer](/static/skillmaps/platformer/platformer1.gif "Look what we're about to learn today!")
+![Một tác phẩm mẫu](/static/skillmaps/platformer/platformer1.gif "Học xong bạn sẽ có thành quả như vậy")
 
 
-## Create the player
+## Tạo hình nhân vật chính
 
-The first thing any good platformer needs is a main character. 🐒
+Để có một tựa game chất lượng, điều đầu tiên là phải tạo nhân vật! 🐒
 
-In Arcade, our characters are [__*sprites*__](#sprote "2-D images that move on the screen").  
-We'll want to create our main sprite and get it moving before we do anything else. 
+Trong game, nhân vật sẽ được ký hiệu là [__*sprites*__](#sprote "Một đối tượng 2D có thể tương tác và di chuyển").  
+Hãy tạo hình ảnh nhân vật chính trong game rồi mới tính bước tiếp theo nhé! 
 <hr>
 
-🔲 From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block to the end of the ``||loops:on start||`` container.
+🔲 Từ hộp công cụ, mục ``||sprites:Sprites||`` hãy nhấn và kéo khối ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+rồi thả vào khay ``||loops:on start||`` trên màn hình.
 
-🔲 Click on the grey box in the middle of your
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
- to open the sprite editor.  From there, you can switch over to "Gallery"
- and choose a pre-drawn character.
+🔲 Kích chuột vào ô màu xám bên trong khối
+ ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` vừa đưa ra màn hình, cửa sổ chỉnh sửa nhân vật sẽ hiện ra. Tại đây ta có thể lựa chọn những mẫu nhân vật có sẵn hoặc chỉnh sửa theo ý mình.
 <hr/>
->>*Tip: Don't like any of the predrawn characters? Stay in the "Editor"
-and create one of your own*!
+>>*Gợi ý: Nếu không ưng ý với những mẫu nhân vật có sẵn, hãy tự thiết kế một nhân vật theo ý bạn!*
 
 
 ```blocks
@@ -117,19 +112,18 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Move the player
+## Di chuyển nhân vật
 
-🢀 Now we need to get the player moving 🢂
+🢀 Tiếp tục thiết lập di chuyển cho nhân vật chính 🢂
 <hr/>
 
-🔲 Drag a ``||controller:move [mySprite] with buttons ⊕||`` block.   
-to the end of the ``||loops:on start||`` container
+🔲 Nhấn vào và kéo khối ``||controller:move [mySprite] with buttons ⊕||`` thả vào cuối của khay ``||loops:on start||`` trên màn hình.
 
-🔲 Press the ⊕ button on the new block and change the [__*vy*__](#whatVY "vertical velocity") 
-argument to **0** so that the player won't move up or down with the joypad.
+🔲 Nhấn vào dấu ⊕ trên khối đó, tiến hành thay đổi giá trị [__*vy*__](#whatVY "vận tốc theo chiều dọc") 
+thành **0**, điều này nhằm đảm bảo nhân vật sẽ không tự ý di chuyển lên xuống trên màn hình.
 
 <hr/>
-**Now you're ready to give your game a try in the simulator!**
+**Sau khi hoàn thành hãy chuyển sang bước tiếp theo nhé!**
 <br/>
 
 ```blocks
@@ -157,18 +151,17 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 100, 0)
 ```
 
-## Add gravity
+## Thêm yếu tố trọng lực
 
-To make the game feel more realistic, let's add some gravity.
+Để game có thể chân thực hơn, ta cần thêm yếu tố trọng lực với nhân vật chính.
 
-To accomplish that, we can add [__*acceleration*__](#accel "increased speed in a direction") to "pull down" on our sprite.
+Để làm việc này, cần áp dụng chỉ số [__*acceleration*__](#accel "gia tốc") lên nhân vật chính.
 <hr/>
-🔲 Drag a ``||sprites:set [mySprite] [x] to [0]||`` block to the end of 
-the ``||loops:on start||`` container.
+🔲 Kéo khối ``||sprites:set [mySprite] [x] to [0]||`` rồi thả vào cuối khay ``||loops:on start||``.
 
-🔲 Click the dropdown to change **x** to **ay (acceleration y)** 
+🔲 Chọn và đổi mục **x** thành **ay (acceleration y)** 
 
-🔲 Replace **0** with **500**.
+🔲 Thay đổi giá trị từ **0** thành **500**.
 <br/>
 
 
@@ -199,22 +192,22 @@ controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 500
 ```
 
-## Jump Pt. 1
+## Thiết lập hành động nhảy (phần 1)
 
-Now that the player is on the ground, we can make them jump!
+Giờ nhân vật chỉ có thể đứng yên, ta hãy thêm khả năng nhảy cho nó nhé!
 
-Let's attach a jumping action to the 🅐 button.
+Ta sẽ gán chức năng nhảy với nút 🅐 trên bảng điều khiển.
 <hr/>
 
-🔲 Start by dragging an ``||controller:on [A] button [pressed]||`` block into the workspace.
+🔲 Kéo khay ``||controller:on [A] button [pressed]||`` ra màn hình chính.
 
-🔲 Inside of that, add ``||sprites:set [mySprite] [x] to [0]||`` . 
+🔲 Tiếp tục chọn khối ``||sprites:set [mySprite] [x] to [0]||`` và thả vào khay vừa rồi. 
 
-🔲 To choose the attribute for the player's [__*vertical velocity*__](#whatVelY "speed in the up/down direction"),
-click the dropdown menu and change **x** to **vy (velocity y)**.
+🔲 Trên khối vừa thả, để thay đổi giá trị [__*vertical velocity*__](#whatVelY "tốc độ nhảy lên/nhảy xuống") của nhân vật chính,
+Ta đổi chỉ số **x** thành **vy (velocity y)**.
 
-🔲 The player will jump upward if you change **0** to something smaller.
-Try  **-150** or **-200**.  
+🔲 Nếu đổi giá trị từ **0** thành 1 số nhỏ hơn, nhân vật sẽ có thể nhảy lên cao.
+Thử với  **-150** hoặc **-200**.  
 <br/>
 
 
@@ -247,8 +240,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Done
+## Hoàn thành
 
-🔥 **That's it! We've created a simple platformer game.** 🔥  
+🔥 **Vậy là ta đã chuẩn bị xong những bước cơ bản nhất của 1 game platformer.** 🔥  
 
-In the next lesson we'll learn how to add obstacles and goals.
+Trong bài tiếp theo chúng ta sẽ được học cách tạo ra chướng ngại vật và mục tiêu, đừng bỏ lỡ!
