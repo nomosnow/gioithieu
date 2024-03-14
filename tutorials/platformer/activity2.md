@@ -84,24 +84,25 @@ controller.moveSprite(mySprite, 100, 0)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Start @unplugged
+##  Bắt đầu @unplugged
 
 
-In this tutorial, we'll create a way to win or lose our platformer game.
+Trong hướng dẫn này, chúng ta sẽ tạo cách để chiến thắng hoặc thua trong trò chơi platformer.
 
 ![Editing our platformer](/static/skillmaps/platformer/platformer2.gif "Time to live dangerously!")
 
 
 ## Camera
 
-Take a moment to move the player sprite around in the simulator.  
 
-Right now, the camera isn't following when the player moves off screen.  
-We can fix that!
+Dành một chút thời gian để di chuyển sprite người chơi trên game .
+
+Hiện tại, máy màn hình không di chuyển theo khi người chơi di chuyển ra khỏi màn hình.
+Chúng ta có thể sửa lỗi đó!
+
 <hr/>
 
-🔲 Drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
-of the ``||loops:on start||`` container.
+🔲 Kéo ``||scene:camera follow sprite [mySprite]||`` vào phần cuối của khối  ``||loops:on start||`` .
 <br/>
 
 ```blocks
@@ -132,26 +133,29 @@ tiles.setTilemap(tilemap`level`)
 scene.cameraFollowSprite(mySprite)
 ```
 
-## Start Tile 
+## Vị trí bắt đầu
 
-🎥 Now we can move around and the camera will follow 🎥  
 
-Unfortunately, our player is starting in dangerous position!
+🎥 Bây giờ chúng ta có thể di chuyển xung quanh và màn hình sẽ theo sau nhân vật chính 🎥
 
-By default, all sprites spawn in the middle of the screen.
-Let's change the game so your player starts somewhere safe.
+Thật không may, người chơi của chúng ta đang bắt đầu ở vị trí nguy hiểm!
+
+Thông thường, tất cả các sprite sẽ xuất hiện ở giữa màn hình.
+Hãy thay đổi vị trí để người chơi của bạn bắt đầu từ một nơi an toàn.
+
 <hr/>
 
-🔲 Snap a ``||scene:place [mySprite] on top of random [ ]||`` block 
-into the bottom of the ``||loops:on start||`` container.
+🔲 Kéo một khối ``||scene:place [mySprite] on top of random [ ]||`` vào dưới cùng của khối  ``||loops:on start||``.
 
-🔲 Click the checkerboard tile and replace it with the green flag.
+
+🔲 Nhấp vào ô màu xám và thay thế nó bằng vị trí mới có hình cờ xanh.
 <hr/>
-**Now your sprite starts on the green flag tile!**  
 
->> *Tip: If you want your sprite to start somewhere else, 
-you can move the green flag by editing the
-[__tilemap__](#tilemp "a grid of square tiles that makes up our background").
+**Bây giờ sprite của bạn bắt đầu trên ô cờ xanh!**  
+
+>> *Mẹo: Nếu bạn muốn sprite của mình bắt đầu ở một nơi khác,
+bạn có thể di chuyển cờ xanh bằng cách chỉnh sửa
+[__tilemap__](#tilemp "bản đồ của trò chơi").
 
 ```blocks
 let mySprite: Sprite = null
@@ -182,19 +186,19 @@ scene.cameraFollowSprite(mySprite)
 tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 ```
 
-## Game Over Pt. 1
+## Kết Thúc Trò Chơi Phần 1
 
-💀 Time to add some *danger* to this game 💀  
+💀 Đến lúc thêm một chút **nguy hiểm** vào trò chơi này 💀 
 
-When the player overlaps the skull tile, we'll trigger a "GAME OVER".
+Khi người chơi trèo lên ô hình hộp sọ, chúng ta sẽ kích hoạt một "GAME OVER".
 <hr/>
 
-🔲 Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container 
-into the workspace.
 
-🔲 Click the checkerboard image and change it to the skull tile.
+🔲 Kéo khối ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` vào màn hình chính.
 
-🔲 Snap a ``||game:game over <LOSE>||`` block into the new container.
+🔲 Nhấp vào hình ô cờ và thay đổi nó thành ô hình sọ.
+
+🔲 Kéo một khối ``||game:game over <LOSE>||`` vào khối mới và chuyển công tắc thành **LOSE**.
 <br/>
 
 ```blocks
@@ -203,18 +207,18 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 })
 ```
 
-## You Win Pt. 1
+## Bạn Chiến Thắng Phần 1
 
-🎈 We have a way to lose, let's add a way to win 🎈  
+🎈 Chúng ta có cách để thua, hãy tạo thêm cách để chiến thắng 🎈  
 <hr/>
 
-🔲 Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
-container into the workspace.
+🔲 Kéo một khối  ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+trên màn hình chính.
 
-🔲 This time, change the checkerboard to the trophy tile.
+🔲 Lần này, thay đổi ô cờ thành ô hình chiếc cúp.
 
-🔲 Snap a ``||game:game over <LOSE>||`` block into the new container and toggle 
-the &lt;LOSE&gt; switch to &lt;WIN&gt;!
+🔲 Kéo một khối ``||game:game over <LOSE>||`` vào khối mới và chuyển công tắc thành **WIN**.
+<br/>
 <br/>
 
 ```blocks
@@ -223,15 +227,12 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location
 })
 ```
 
-## Finished
+## Hoàn Thành
 
-**That's it!**
+Đó là tất cả!
 
-Now we have a simple platformer that has a way to win and a way to lose.
+Bây giờ chúng ta có một trò chơi platformer đơn giản có cách để thắng và cách để thua.
 
-If you like, open the [__tilemap__](#tilemp "a grid of square tiles that makes up our background") 
-editor and design your own level. 
-<hr/> 
+Nếu bạn muốn, hãy mở bản đồ [__tilemap__](#tilemp "bản đồ ")
+và thiết kế bản đồ cho trò chơi riêng của bạn.
 
->> *Tip: Make sure you use the wall tool to mark anything you don't want your sprites
-to travel through!*
