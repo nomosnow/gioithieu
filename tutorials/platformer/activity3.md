@@ -102,17 +102,17 @@ Nối tiếp những gì đã làm được ở phần trước, ở bài này c
 
 ## Xuất hiện kẻ địch (phần 1)
 
-**Bắt đầu với việc lựa chọn vị trí [__*spawn*__](#spawnd "make appear") kẻ địch .**  
+**Bắt đầu với việc lựa chọn vị trí [__*spawn*__](#spawnd "triệu hồi") kẻ địch .**  
 
 Địa điểm này được đánh dấu bằng dấu **[ ! ]** màu tím.
 <hr/>
 
-🔲 Kéo khối [__loop__](#loopd "a segment of code that runs multiple times in a row") ``||loops: for element [value] of [list]||``
+🔲 Kéo khối [__loop__](#loopd "một thao tác được lặp đi lặp lại") ``||loops: for element [value] of [list]||``
 rồi thả vào phía cuối của khay ``||loops: on start||``.
 
-Nút [__*list*__](#listical  "danh sách các đối tượng") trong khối vòng lặp phía trên 👆 sẽ liệt kê và chi phối vị trí các ô 
- **[ ! ]** màu tím 
-Việc của ta là xác định và điều chỉnh vị trí của các ô này.
+Nút [__list__](#listical  "danh sách các đối tượng") trong khối vòng lặp phía trên 👆 sẽ liệt kê và chi phối vị trí các ô 
+ **[ ! ]** màu tím.
+ Việc của ta là xác định và điều chỉnh vị trí của các ô này.
 
 🔲 Tìm và kéo khối ``||scene: array of all [ ] locations||`` đưa ra ngoài màn hình, đồng thời đưa nó vào thay vị trí của nút **list**.
 
