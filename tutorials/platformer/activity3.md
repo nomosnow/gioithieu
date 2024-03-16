@@ -91,34 +91,32 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 info.setLife(3)
 ```
 
-## Start @unplugged
+## Bắt đầu @unplugged
 
-In this lesson, we'll take what we made in previous tutorials and add simple enemies.  
+Nối tiếp những gì đã làm được ở phần trước, ở bài này chúng ta sẽ thêm độ khó cho game bằng một vài kẻ thù nhé.  
 
-We'll also use a sprite overlap event to have enemies interact with the player sprite.
+Đồng thời chúng ta sẽ thiết lập cơ chế tương tác giữa nhân vật chính và những kẻ địch này nhé.
 
-![Editing our platformer](/static/skillmaps/platformer/platformer3.gif "Time to live dangerously!")
+![Tiến hành chỉnh sửa game](/static/skillmaps/platformer/platformer3.gif "Time to live dangerously!")
 
 
-## Spawning enemies pt. 1
+## Xuất hiện kẻ địch (phần 1)
 
-**Let's start by choosing a location to [__*spawn*__](#spawnd "make appear") 
-some enemies on the tilemap.**  
+**Bắt đầu với việc lựa chọn vị trí [__*spawn*__](#spawnd "make appear") kẻ địch .**  
 
-We'll use purple **[ ! ]** tiles as enemy spawn points.
+Địa điểm này được đánh dấu bằng dấu **[ ! ]** màu tím.
 <hr/>
 
-🔲 Drag out a ``||loops: for element [value] of [list]||`` [__loop__](#loopd "a segment of code that runs multiple times in a row")
-and snap it into the bottom of the ``||loops: on start||`` container.
+🔲 Kéo khối [__loop__](#loopd "a segment of code that runs multiple times in a row") ``||loops: for element [value] of [list]||``
+rồi thả vào phía cuối của khay ``||loops: on start||``.
 
-The [__*list*__](#listical  "ordered group of items") we need in the header of that 👆 loop 
-is the list of saved location for each of the **[ ! ]** blocks. 
-Fortunately, we have a piece of code that tells us where those are.
+Nút [__*list*__](#listical  "danh sách các đối tượng") trong khối vòng lặp phía trên 👆 sẽ liệt kê và chi phối vị trí các ô 
+ **[ ! ]** màu tím 
+Việc của ta là xác định và điều chỉnh vị trí của các ô này.
 
-🔲 Find the ``||scene: array of all [ ] locations||`` argument block and 
-drag it into the header of the new loop where the **list** argument is.
+🔲 Tìm và kéo khối ``||scene: array of all [ ] locations||`` đưa ra ngoài màn hình, đồng thời đưa nó vào thay vị trí của nút **list**.
 
-🔲 Click on the checkerboard and change it to the **[ ! ]** tile.
+🔲 Nhấn vào ô vuông xám rồi đổi thành biểu tượng dấu **[ ! ]** màu tím.
 <br/>
 
 ```blocks
