@@ -82,15 +82,15 @@
 
 
 ## platformer
-* name: Learn to Make a Platformer
-* description: A skillmap that takes you through how to build a platformer with multiple levels.
+* name: Hãy học cách tạo một trò chơi Platformer
+* description: Tạo nhiều bài trên platformer
 * completionUrl: https://microsoft.github.io/nomosnow/gioithieu/certificates/learn-to-make-a-platformer.pdf
 
 ### platformer-activity1
 
-* name: Simple Platformer
+* name: Trò chơi Platformer đơn giản
 * type: tutorial
-* description: Learn how to make a player character that can jump and move around a tilemap.
+* description: Học cách tạo nhân vật có thể nhảy trên bản đồ
 * url: https://github.com/nomosnow/gioithieu/tutorials/platformer/activity1
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/platformer/activity1.png
 * tags: easy
@@ -98,9 +98,9 @@
 
 ### platformer-activity2
 
-* name: Camera and Tiles
+* name: Màn hình và các vị trí trên bản đồ
 * type: tutorial
-* description: Learn how to use the camera and add tile overlap events to give the player a way to win and lose.
+* description: Làm sao để cho người chơi có thể thắng hoặc thua khi chơi game. Màn hình có thể theo sau người chơi khi di chuyển quanh bản đồ.
 * url: https://github.com/nomosnow/gioithieu/tutorials/platformer/activity2
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/platformer/activity2.png
 * tags: easy, tiles
@@ -108,9 +108,9 @@
 
 ### platformer-activity3
 
-* name: Simple Enemies
+* name: Tạo kẻ thù
 * type: tutorial
-* description: Learn how to add enemies to your game that follow the player.
+* description: Học cách tạo kẻ thù theo sau người chơi
 * url: https://github.com/nomosnow/gioithieu/tutorials/platformer/activity3
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/platformer/activity3.png
 * tags: intermediate, overlaps
@@ -118,9 +118,9 @@
 
 ### platformer-activity4
 
-* name: Multiple Levels
+* name: Tạo nhiều bàn
 * type: tutorial
-* description: Add a second level to your platformer using functions.
+* description: Tạo nhiều bàn khác nhau.
 * url: https://github.com/nomosnow/gioithieu/tutorials/platformer/activity4
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/platformer/activity4.png
 * tags: intermediate, functions
@@ -128,9 +128,9 @@
 
 ### platformer-activity5
 
-* name: Enemy AI
+* name: Tạo sự thông minh cho kẻ thù
 * type: tutorial
-* description: Add physics and AI to the enemies in your game.
+* description: tạo kẻ thù có sự thông minh và thêm tác động vật lý vào trò chơi
 * url: https://github.com/nomosnow/gioithieu/tutorials/platformer/activity5
 * imageUrl: https://raw.githubusercontent.com/nomosnow/gioithieu/main/img/platformer/activity5.png
 * tags: intermediate, AI, physics
