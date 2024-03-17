@@ -1,6 +1,5 @@
 # Thử Thách
 
-### @autoexpandOff true
 
 
 
