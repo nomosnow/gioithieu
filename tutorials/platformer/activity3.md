@@ -100,21 +100,21 @@ Nối tiếp những gì đã làm được ở phần trước, ở bài này c
 ![Tiến hành chỉnh sửa game](/static/skillmaps/platformer/platformer3.gif "Time to live dangerously!")
 
 
-## Xuất hiện kẻ địch (phần 1)
+## Triệu hồi kẻ địch (phần 1)
 
 **Bắt đầu với việc lựa chọn vị trí [__*spawn*__](#spawnd "triệu hồi") kẻ địch .**  
 
 Địa điểm này được đánh dấu bằng dấu **[ ! ]** màu tím.
 <hr/>
 
-🔲 Kéo khối [__loop__](#loopd "một thao tác được lặp đi lặp lại") ``||loops: for element [value] of [list]||``
+🔲 Kéo khối [__lặp__](#loopd "một thao tác được lặp đi lặp lại") ``||loops: for element [value] of [list]||``
 rồi thả vào phía cuối của khay ``||loops: on start||``.
 
 Nút [__list__](#listical  "danh sách các đối tượng") trong khối vòng lặp phía trên 👆 sẽ liệt kê và chi phối vị trí các ô 
  **[ ! ]** màu tím.
  Việc của ta là xác định và điều chỉnh vị trí của các ô này.
 
-🔲 Tìm và kéo khối ``||scene: array of all [ ] locations||`` đưa ra ngoài màn hình, đồng thời đưa nó vào thay vị trí của nút **list**.
+🔲 Tìm và kéo khối ``||scene: array of all [ ] locations||`` đưa ra ngoài màn hình, đồng thời đưa nó vào thay thế vị trí của nút **list** trong khối lặp.
 
 🔲 Nhấn vào ô vuông xám rồi đổi thành biểu tượng dấu **[ ! ]** màu tím.
 <br/>
@@ -152,30 +152,26 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## A little lesson @unplugged
+## Một chút lưu ý @unplugged
 
-Now our loop will run for each tile location.  
+Giờ thì mỗi vị trí xuất hiện kẻ địch sẽ có sự xuất hiện lặp lại.  
 
-Each time through the loop, the argument **"value"** will contain another 
-location on the tilemap!
+Sử dụng hàm lặp, ta có thể chi phối vị trí và tần xuất triệu hồi kẻ địch một cách ngẫu nhiên!
 
 
-## Spawning enemies pt. 3
+## Triệu hồi kẻ địch (phần 2)
 
-👾 Time to spawn some enemies 👾 
+👾 Hãy thử triệu hồi vài kẻ địch nhé 👾 
 <hr/>
 
-🔲 Drag ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
-into the new loop.
+🔲 Kéo khối ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
+vào khe trống của khay vòng lặp.
 
-🔲 Click the **mySprite2** [__*variable*__](#varied "a label that holds the place for something that can change") 
-and choose to create a **new variable** called **myEnemy**. 
+🔲 Kích vào dòng **mySprite2** rồi chọn **new variable** để tạo một giá trị mới đặt tên nó là **myEnemy**. 
 
-🔲 Click the grey sprite rectangle inside the new block to draw an image for the enemy
-(or choose one from the gallery.)
+🔲 Kích vào hình vuông nàu xám rồi thiết kế ngoại hình cho kẻ thù nhé (hoặc có thể chọn mẫu có sẵn)
 
-
-🔲 Set the sprite kind to **Enemy**  
+🔲 Kích vào dòng **Player** rồi đổi thành **Enemy**  
 <br/>
 
 ```blocks
@@ -229,20 +225,16 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Spawning enemies pt. 3
-Our enemies are spawning now, but they're all hanging out in one location.
+##  Triệu hồi kẻ địch (phần 3)
+Giờ thì đã có kẻ địch, nhưng chúng sẽ xuất hiện ở cùng một chỗ, thật nhàm chán.
 
-Let's start each of them on a different **[ ! ]** tile. (Each location will be 
-stored in the **value** variable at some point as we move through
-the **for element** loop.)
+Hãy thiết lập để chúng xuất hiện mỗi con ở 1 dấu **[ ! ]** . (Các dấu này sẽ có vị trí được quyết định dựa vào tham số **value** phụ thuộc vào việc chúng ta điều chỉnh vòng lặp **for element**.)
 <hr/>
 
-🔲 Drag a ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` block 
-to the bottom of the **for element** loop.
+🔲 Đàu tiên kéo khối ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` 
+thả vào cuối khay chứa hàm lặp **for element**.
 
-🔲 Change the sprite variable to **myEnemy** and replace the  ``||scene: tilemap col [0] row [0]||``
-argument block with the ``||variables: value||`` argument from the header of the
-**for element** loop.
+🔲 Đổi tên **mySprite** thành **myEnemy** rồi ta kéo thay thế ``||variables: value||`` từ trên đầu khay lặp **for element** xuống để thay chỗ cho ``||scene: tilemap col [0] row [0]||``
 <br/>
 
 ```blocks
