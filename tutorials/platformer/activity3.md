@@ -107,10 +107,10 @@ Nối tiếp những gì đã làm được ở phần trước, ở bài này c
 Địa điểm này được đánh dấu bằng dấu **[ ! ]** màu tím.
 <hr/>
 
-🔲 Kéo khối [__lặp__](#loopd "một thao tác được lặp đi lặp lại") ``||loops: for element [value] of [list]||``
+🔲 Kéo khối [__lặp__](#loopd "một lệnh được lặp đi lặp lại") ``||loops: for element [value] of [list]||``
 rồi thả vào phía cuối của khay ``||loops: on start||``.
 
-Nút [__list__](#listical  "danh sách các đối tượng") trong khối vòng lặp phía trên 👆 sẽ liệt kê và chi phối vị trí các ô 
+Nút [__list__](#listical  "danh sách các đối tượng") trong khối vòng lặp vừa thêm sẽ liệt kê và chi phối vị trí các ô 
  **[ ! ]** màu tím.
  Việc của ta là xác định và điều chỉnh vị trí của các ô này.
 
@@ -164,8 +164,8 @@ Sử dụng hàm lặp, ta có thể chi phối vị trí và tần xuất tri�
 👾 Hãy thử triệu hồi vài kẻ địch nhé 👾 
 <hr/>
 
-🔲 Kéo khối ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
-vào khe trống của khay vòng lặp.
+🔲 Tìm và kéo khối ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
+vào khe trống của khay vòng lặp đã tạo ở bước trước đó.
 
 🔲 Kích vào dòng **mySprite2** rồi chọn **new variable** để tạo một giá trị mới đặt tên nó là **myEnemy**. 
 
@@ -232,7 +232,7 @@ Hãy thiết lập để chúng xuất hiện mỗi con ở 1 dấu **[ ! ]** . 
 <hr/>
 
 🔲 Đàu tiên kéo khối ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` 
-thả vào cuối khay chứa hàm lặp **for element**.
+thả vào cuối khay chứa của hàm lặp **for element**.
 
 🔲 Đổi tên **mySprite** thành **myEnemy** rồi ta kéo thay thế ``||variables: value||`` từ trên đầu khay lặp **for element** xuống để thay chỗ cho ``||scene: tilemap col [0] row [0]||``
 <br/>
