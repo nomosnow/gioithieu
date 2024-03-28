@@ -169,7 +169,7 @@ vào khe trống của khay vòng lặp đã tạo ở bước trước đó.
 
 🔲 Kích vào dòng **mySprite2** rồi chọn **new variable** để tạo một giá trị mới đặt tên nó là **myEnemy**. 
 
-🔲 Kích vào hình vuông nàu xám rồi thiết kế ngoại hình cho kẻ thù nhé (hoặc có thể chọn mẫu có sẵn)
+🔲 Kích vào hình vuông màu xám rồi thiết kế ngoại hình cho kẻ thù nhé (hoặc có thể chọn mẫu có sẵn)
 
 🔲 Kích vào dòng **Player** rồi đổi thành **Enemy**  
 <br/>
@@ -416,9 +416,9 @@ Công cụ ở đây được sử dụng là khối lệnh ``||logic:if <true> 
 <hr/>
 Hãy đọc kỹ chút trước khi làm tiếp nhé  🤯
 
-Để lệnh ``||logic:if <true> then||``hoạt động hiệu quả, ta cần làm rõ cơ chế "nhảy lên đầu" và "va vào" đối với kẻ địch sẽ khác nhau như thế nào.
+Để lệnh ``||logic:if <true> then||`` hoạt động hiệu quả, ta cần làm rõ cơ chế "nhảy lên đầu" và "va vào" đối với kẻ địch sẽ khác nhau như thế nào.
 
-Để làm được việc này, ta phải đánh giá rằng chân của nhân vật ở vị trí như thế nào khi va chạm vào kẻ địch. Hãy làm như sau nhé:
+Để làm được việc này, ta phải đánh giá được chân của nhân vật ở vị trí nào khi va chạm vào kẻ địch (cao hơn hay thấp hơn đầu của kẻ địch). Hãy làm như sau nhé:
 
 🔲 Kéo cụm ``||logic:0 < 0||`` ra rồi chèn vào thay thế vị trí của ô có chữ ** `<true>` ** trong cụm ``||logic:if <true> then||``.
 
