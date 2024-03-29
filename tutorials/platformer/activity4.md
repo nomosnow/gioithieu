@@ -538,7 +538,7 @@ Khá ổn rồi, giờ ta phải làm việc với cơ chế cụ thể ở từ
 
 Có vài vấn đề logic cần quan tâm:
  - Khi ta đang ở chính màn chơi **1**, đương nhiên bản đồ gốc sẽ được sử dụng ở đây
- - Khi nhân vật hoàn thành màn chơi (chạm vào chiếc cúp ở cuối màn)), màn chơi sẽ được tự động tăng lên cấp tiếp theo. 
+ - Khi nhân vật hoàn thành màn chơi (chạm vào chiếc cúp ở cuối màn), màn chơi sẽ được tự động tăng lên cấp tiếp theo. 
 
 Cho trường hợp màn chơi chuyển sang cấp cao hơn này, ta dùng thêm hàm **else**
 <hr/>  
