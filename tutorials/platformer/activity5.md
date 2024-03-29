@@ -221,14 +221,14 @@ game.onUpdate(function () {
 
 ## Kẻ địch biết nhảy! (phần 1)
 
-Bắt đầu với cặp **điều kiện** - **hành đông** đầu tiên:
+Bắt đầu với cặp **điều kiện** - **hành động** đầu tiên:
 
-> 1. **Khi sắp va vào tường chắn, kẻ địch phải biết nhảy vượt qua**  
+**Khi sắp va vào tường chắn, kẻ địch phải biết nhảy vượt qua**  
 <hr/>
 
 🔲 Lại dùng hàm **if- then**, ta kéo khối lệnh ``||logic: if <true> then||`` vào khe trống trong lệnh **on game update** (màu xanh lá cây).
 
-🔲 Kéo và thả chèn thay ô ``||logic: <true>||`` màu xanh bên trong hàm **if/then** bằng khối ``||scene: is [mySprite] hitting wall [left]||``.  
+🔲 Kéo và thả cụm lệnh ``||scene: is [mySprite] hitting wall [left]||`` để chèn thay ô ``||logic: <true>||`` màu xanh bên trong hàm **if/then** .  
 
 🔲 Đổi giá trị ``||variables: mySprite||`` bằng cách kéo ô ``||variables: value||`` màu đỏ từ trên hàm **for element** xuống chèn vào.
 
@@ -251,7 +251,7 @@ Giờ kẻ địch đang ở trạng thái dưới mặt đất, và chúng có 
  - Kẻ địch đi sang trái và trước mặt chúng có tường chắn
  - Kẻ địch đi sang phải và trước mặt chúng cũng sẽ có tường chắn
 
-Ta lại dùng hàm **nếu-thì** (**if/then**) để thể hiện 2 trươngf hợp này nhé.
+Ta lại dùng hàm **nếu-thì** (**if/then**) để thể hiện 2 trường hợp này nhé.
 <hr/>
 
 🔲 Kéo tiếp mộtj khối lệnh ``||logic:if <true> then||`` và đặt vào trong khe trống của lệnh **if-then** trước đó.
@@ -325,24 +325,20 @@ game.onUpdate(function () {
 ```
 
 
-## Jumping pt. 7
+## Kẻ địch biết nhảy! (phần 5)
 
-Next, we'll add the code to do the same thing to the right.
+Giờ thì lặp lại các bước trên với trường hợp kẻ địch đi sang phải.
 <hr/>
 
-🔲 Click twice on the **⊕** button at the bottom of the innermost **if/else**
-statement that we've just completed, to add an **else** then an **else if** clause.
+🔲 Kích 2 lần vào nút dấu cộng **⊕** của hàm **if/else** trong cùng nhàm thêm 2 mệnh đề **else** và **else if - then**.
 
-🔲 Duplicate the entire **and** statement, then drop the duplicate into the
-header of the **else if** clause.  
+🔲 Nhân bản toàn bộ dòng lệnh có **and** nằm chính giữa, rồi đặt vào trong ô trống ở mệnh đề **else if - then** vừa xuất hiện.  
 
-🔲 In the new clause, change **<** to **>** and **left** to **right**.
+🔲 Ở đây ta thay đổi dấu **<** thành **>**, đổi **left** thành **right**.
 
-🔲 Duplicate the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` block 
-and snap the copy inside the empty **else if** statement.
+🔲 Nhân bản cụm lệnh ``||sprites:set [value] [vy (velocity y)] to [-150]||``rồi ném vào giữa khe trống của mệnh đề **else if - then**.
 
-🔲 We're done with this **if/else if** statement now, so you can click the 
-**⊖** beside the **else** clause to remove it from the block.
+🔲 Để xử lý dòng lệnh không cần thiết, ta ấn vào dấu **⊖** phía cuối mệnh đề **else** nhằm loại bỏ nó.
 
 <br/>
 
@@ -361,26 +357,22 @@ game.onUpdate(function () {
 ```
 
 
-## Wall bouncing pt. 1
+## Chướng ngại vật (phần 1)
 
-We've completed the code for rule #1, now let's take a look at rule #2.
+Giờ ta xét đến cặp **điều kiện-hành động** số #2.
 
-> 2. **If the enemy does hit a wall, it will turn around**
+**Khi kẻ địch chạm vào chướng ngaị vật, chúng sẽ biết quay đầu**
 
 <hr/>
-The case for an enemy not running into a wall while traveling on the ground has been handled.
-Next, we need to add cases for when an enemy runs into a wall on the left or right
-while it's already trying to jump.
+Giờ thì kẻ địch đối diện với chướng ngại vật chúng sẽ phải biết quay về hướng ngược lại để tiếp tục truy đuổi nhân vật của chúng ta thì còn hay hơn.
 
-🔲 Click three times on the **⊕** button at the bottom of the outermost **if/else**
-statement (**if <is value hitting wall bottom> then**) to add an **else** and two **else if** clauses.
+🔲 Kích 3 lần dấu **⊕** của hàm **if/else** ngoài cùng (có chứa dòng code **if <is value hitting wall bottom> then**) và ta sẽ thêm 1 dòng mệnh đề **else** cùng 2 dòng **else if-then**.
 
-🔲 Duplicate the ``||scene: is [value] hitting wall [bottom]||`` argument twice and 
-place a copy in each of the new **else if** headers.
+🔲 Nhân bản 2 lần cụm ``||scene: is [value] hitting wall [bottom]||`` rồi đưa chúng vào ô trống trong từng dòng **else if-then** vừa tạo.
 
-🔲 Change **bottom** to **left** in the first **else if**.
+🔲 Với dòng **else if-then** đầu tiên, ta đổi **bottom** thành **left**.
 
-🔲 Change **bottom** to **right** in the second **else if**.  
+🔲 Với dòng **else if-then** tiếp theo, ta đổi **bottom** thành **right**.  
 <br/>
 
 ```blocks
@@ -401,22 +393,19 @@ game.onUpdate(function () {
 })
 ```
 
-## Wall bouncing pt. 2
+## Chướng ngại vật (phần 2)
 
-Finally, we need to add the code to make the enemies turn right if they were
-going left and left if they were going right.
+Khi này, kẻ địch đã thông minh hơn và biết quay đầu truy đuổi. Tiếp theo ta:
 <hr/>
 
-🔲 Make two duplicates of one of the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` blocks from the original **if/then**
-clause and snap one into each of the empty **else if** clauses.
+🔲 Với dòng lệnh ``||sprites:set [value] [vy (velocity y)] to [-150]||`` trong dòng code **if/then** đầu tiên, ta tạo 2 bản sao của nó bằng chức năng _duplicate_,
+rồi đưa chúng vào trong khe trống của 2 mệnh đề **else if-then** bên trên.
 
-🔲 For the **set value** block inside the first **else if** clause 
-(**else if <is value hitting wall left> then**), change 
-**vy (velocity y)** to **vx (velocity x)** and change **-150** to **30**.
+🔲 Ở dòng code **set value** đầu tiên được đặt vào trong mệnh đề(**else if <is value hitting wall left> then**), ta thay đổi 
+**vy (velocity y)** thành **vx (velocity x)** đồng thời xoá **-150** đổi thành **50**.
 
-🔲 For the **set value** block inside the second **else if** clause 
-(**else if <is value hitting wall right> then**), change 
-**vy (velocity y)** to **vx (velocity x)** and change **-150** to **-30**.
+🔲 Với dòng code **set value** thứ 2 đặt trong (**else if <is value hitting wall right> then**), thì ta đổi 
+**vy (velocity y)** thành **vx (velocity x)**, đồng thời đổi giá trị **-150** thành **-50**.
 
 
 ```blocks
@@ -438,14 +427,11 @@ game.onUpdate(function () {
 ```
 
 
-## Finish
+## HOÀN THÀNH!
 
-🎊 Congratulations 🎊
+🎊 Xin chúc mừng! 🎊
 
-You've created an arcade game with levels, interactive tilemaps, and 
-intelligent enemies! Now make sure to play through it, then share with friends.
+Bạn đã hoàn thành một game platform với đầy đủ các yếu tố cơ bản: một nhân vật chính ngầu lòi, những kẻ địch hung hãn và đông đảo, Những màn chơi đầy thử thách. Đừng ngần ngại chia sẻ thành quả này với bạn bè của mình nhé!
 
-Arcade has many options that haven't been explored here.  If you have time,
-you should click out to the main Arcade page and play with our full editor
-to make a game all of your own!
+Tiếp tục tìm hiểu và bạn sẽ có được những phiên bản trò chơi khác của riêng mình.
 
