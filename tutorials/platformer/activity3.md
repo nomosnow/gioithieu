@@ -91,34 +91,32 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 info.setLife(3)
 ```
 
-## Start @unplugged
+## Bắt đầu @unplugged
 
-In this lesson, we'll take what we made in previous tutorials and add simple enemies.  
+Nối tiếp những gì đã làm được ở phần trước, ở bài này chúng ta sẽ thêm độ khó cho game bằng một vài kẻ thù nhé.  
 
-We'll also use a sprite overlap event to have enemies interact with the player sprite.
+Đồng thời chúng ta sẽ thiết lập cơ chế tương tác giữa nhân vật chính và những kẻ địch này nhé.
 
-![Editing our platformer](/static/skillmaps/platformer/platformer3.gif "Time to live dangerously!")
+![Tiến hành chỉnh sửa game](/static/skillmaps/platformer/platformer3.gif "Time to live dangerously!")
 
 
-## Spawning enemies pt. 1
+## Triệu hồi kẻ địch (phần 1)
 
-**Let's start by choosing a location to [__*spawn*__](#spawnd "make appear") 
-some enemies on the tilemap.**  
+**Bắt đầu với việc lựa chọn vị trí [__*spawn*__](#spawnd "triệu hồi") kẻ địch .**  
 
-We'll use purple **[ ! ]** tiles as enemy spawn points.
+Địa điểm này được đánh dấu bằng dấu **[ ! ]** màu tím.
 <hr/>
 
-🔲 Drag out a ``||loops: for element [value] of [list]||`` [__loop__](#loopd "a segment of code that runs multiple times in a row")
-and snap it into the bottom of the ``||loops: on start||`` container.
+🔲 Kéo khối [__lặp__](#loopd "một lệnh được lặp đi lặp lại") ``||loops: for element [value] of [list]||``
+rồi thả vào phía cuối của khay ``||loops: on start||``.
 
-The [__*list*__](#listical  "ordered group of items") we need in the header of that 👆 loop 
-is the list of saved location for each of the **[ ! ]** blocks. 
-Fortunately, we have a piece of code that tells us where those are.
+Nút [__list__](#listical  "danh sách các đối tượng") trong khối vòng lặp vừa thêm sẽ liệt kê và chi phối vị trí các ô 
+ **[ ! ]** màu tím.
+ Việc của ta là xác định và điều chỉnh vị trí của các ô này.
 
-🔲 Find the ``||scene: array of all [ ] locations||`` argument block and 
-drag it into the header of the new loop where the **list** argument is.
+🔲 Tìm và kéo khối ``||scene: array of all [ ] locations||`` đưa ra ngoài màn hình, đồng thời đưa nó vào thay thế vị trí của nút **list** trong khối lặp.
 
-🔲 Click on the checkerboard and change it to the **[ ! ]** tile.
+🔲 Nhấn vào ô vuông xám rồi đổi thành biểu tượng dấu **[ ! ]** màu tím.
 <br/>
 
 ```blocks
@@ -154,30 +152,26 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## A little lesson @unplugged
+## Một chút lưu ý @unplugged
 
-Now our loop will run for each tile location.  
+Giờ thì mỗi vị trí xuất hiện kẻ địch sẽ có sự xuất hiện lặp lại.  
 
-Each time through the loop, the argument **"value"** will contain another 
-location on the tilemap!
+Sử dụng hàm lặp, ta có thể chi phối vị trí và tần xuất triệu hồi kẻ địch một cách ngẫu nhiên!
 
 
-## Spawning enemies pt. 3
+## Triệu hồi kẻ địch (phần 2)
 
-👾 Time to spawn some enemies 👾 
+👾 Hãy thử triệu hồi vài kẻ địch nhé 👾 
 <hr/>
 
-🔲 Drag ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
-into the new loop.
+🔲 Tìm và kéo khối ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
+vào khe trống của khay vòng lặp đã tạo ở bước trước đó.
 
-🔲 Click the **mySprite2** [__*variable*__](#varied "a label that holds the place for something that can change") 
-and choose to create a **new variable** called **myEnemy**. 
+🔲 Kích vào dòng **mySprite2** rồi chọn **new variable** để tạo một giá trị mới đặt tên nó là **myEnemy**. 
 
-🔲 Click the grey sprite rectangle inside the new block to draw an image for the enemy
-(or choose one from the gallery.)
+🔲 Kích vào hình vuông màu xám rồi thiết kế ngoại hình cho kẻ thù nhé (hoặc có thể chọn mẫu có sẵn)
 
-
-🔲 Set the sprite kind to **Enemy**  
+🔲 Kích vào dòng **Player** rồi đổi thành **Enemy**  
 <br/>
 
 ```blocks
@@ -231,20 +225,16 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Spawning enemies pt. 3
-Our enemies are spawning now, but they're all hanging out in one location.
+##  Triệu hồi kẻ địch (phần 3)
+Giờ thì đã có kẻ địch, nhưng chúng sẽ xuất hiện ở cùng một chỗ, thật nhàm chán.
 
-Let's start each of them on a different **[ ! ]** tile. (Each location will be 
-stored in the **value** variable at some point as we move through
-the **for element** loop.)
+Hãy thiết lập để chúng xuất hiện mỗi con ở 1 dấu **[ ! ]** . (Các dấu này sẽ có vị trí được quyết định dựa vào tham số **value** phụ thuộc vào việc chúng ta điều chỉnh vòng lặp **for element**.)
 <hr/>
 
-🔲 Drag a ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` block 
-to the bottom of the **for element** loop.
+🔲 Đầu tiên kéo khối ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` 
+thả vào cuối khay chứa của hàm lặp **for element**.
 
-🔲 Change the sprite variable to **myEnemy** and replace the  ``||scene: tilemap col [0] row [0]||``
-argument block with the ``||variables: value||`` argument from the header of the
-**for element** loop.
+🔲 Đổi tên **mySprite** thành **myEnemy** rồi ta kéo thay thế ``||variables: value||`` từ trên đầu khay lặp **for element** xuống để thay chỗ cho ``||scene: tilemap col [0] row [0]||``
 <br/>
 
 ```blocks
@@ -299,17 +289,17 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Enemy follow
-💤 Did you notice that we have the laziest enemies ever? 💤
+## Làm cho kẻ thù trở nên nguy hiểm
+💤 Những kẻ thù ta vừa tạo có vẻ hơi lười biếng 💤
 
-Let's wake-up our sprites and get them following our player.
+Hãy biến chúng thành những kẻ bám đuổi khó chịu để game trở nên thú vị nhé!
 <hr/>
-🔲 Snap a ``||sprites: set [myEnemy] follow [mySprite]||`` block 
-into the bottom of the **for element** loop.
+🔲 Kéo khối ``||sprites: set [myEnemy] follow [mySprite]||`` 
+Vào cuối của vòng lặp **for element** ta đã tạo.
 
-🔲 Change the first sprite argument to **myEnemy** and the second to **mySprite**.
+🔲 Đảm bảo giá trị phía sau từ **set** là **myEnemy** và giá trị đằng sau **follow** là **mySprite** nhé!
 
-🔲 Press the **⊕** on the new block and change the speed to **30**.
+🔲 Ấn vào nút có hình dấu **⊕** và đổi giá trị này thành **30**.
 <br/>
 
 ```blocks
@@ -364,44 +354,39 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Damage pt. 1 @unplugged
+## Cơ chế chịu sát thương từ kẻ địch (phần 1) @unplugged
 
-Now the enemies should be moving toward the player.
-
-What happens when the enemies reach the player? **Nothing?!?**
-Well, that's no fun.  
-Let's add some code to make this more exciting.  
-😈👿😈 &nbsp;  😱  
+Các kẻ địch sẽ phải có xu hướng lao về phía nhân vật chính của chúng ta.
+Vậy điều gì sẽ xảy ra khi kẻ địch va chạm vào nhân vật của ta?
+**Chẳng có gì xảy ra cả!!!** Chà, nghe không ổn nhỉ?  
+Để không nhàm chán như vậy ta sẽ phải tiến hành vài thao tác để game thêm phần thú vị nhé 😈👿😈 
 <hr/>
 
-**Our player and enemies might meet under a couple of different** 
-[**_conditions_**](#condy "thing we need to know before deciding what happens next"):
+**Ta sẽ liệt kê vài trường hợp **(conditions)** giả định khi nhân vật và kẻ địch chạm mặt nhau** 
+([**_conditions_**](#condy "những trường hợp có thể xảy ra và hệ quả của chúng")):
 
-1. **If the player jumps on an enemy, the enemy is destroyed**
+1. **Nếu nhân vật nhảy được lên đầu của kẻ địch, chúng sẽ bị tiêu diệt**
 
-2. **If the player runs into an enemy, 
-the player takes damage and the enemy is destroyed**
+2. **Nếu nhân vật và kẻ địch va chạm trực tiếp, thì kẻ địch sẽ biến mất nhưng đồng thời sẽ gât ra sát thương cho nhân vật của chúng ta**
 
 <hr/>
-We'll need an **on sprite overlap** event to know if these happen!
+Ta cần thiết lập đầy đủ cho mỗi trường hợp trên khi nó xảy ra.
 
-## Damage pt. 2
-In both overlap cases, we want to destroy the enemy sprite...so 
-let's code that part first.  
+## Cơ chế chịu sát thương từ kẻ địch (phần 2)
+Trong cả hai trường hợp giả định trên, thì đều cho ra hệ quả là kẻ địch sẽ bị tiêu diệt (hoặc biến mất). Vậy hãy bắt đầu từ phần này nhé.
 💥👿💥
 <hr/>
 
-🔲 From the ``||sprites: Sprites||`` category, drag an 
+🔲 Từ trong công cụ``||sprites: Sprites||``, ta kéo khay
 ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` 
-[__*event*__](#eventTime "element that makes something happen when a certain action is performed")
- container into the workspace.
+ ra ngoài cửa sổ làm việc.
 
-🔲 Leave the first kind as **Player** and change the second kind to **Enemy**.
+🔲 Nhìn về cuối khay vừa kéo ra, thay đổi **Player** thành **Enemy**.
 
-🔲 Snap a ``||sprites: destroy [mySprite]  ⊕||`` block into the new event container.
+🔲 Kéo tiếp khối ``||sprites: destroy [mySprite]  ⊕||`` để thả vào khay vừa tạo.
 
-🔲 Drag the ``||variables: otherSprite||`` argument from the **on sprite overlaps** 
-event to replace the ``||variables: mySprite||`` variable inside the destroy block.
+🔲 Ta thao tác kéo thả cụm ``||variables: otherSprite||`` đằng sau ký tự **overlaps** 
+thay thế cho cụm ``||variables: mySprite||`` đằng sau từ **destroy** phía dưới.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -409,16 +394,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Damage pt. 4 @unplugged
+## Cơ chế chịu sát thương từ kẻ địch (phần 3) @unplugged
 
-❗ Here comes the exciting part ❗
+❗ Giờ sẽ tới màn hấp dẫn đây❗
 
-We need to figure out whether the enemy was **jumped on** or **run into**.  
-**_THEN_**, based on that 
-[**_condition_**](#condy "thing we need to know before deciding what happens next"),
- we need to run different code.
+Ta sẽ phân biệt hai trường hợp nhân vật "nhảy lên đầu" kẻ địch hay là "va vào" kẻ địch. 
+với mỗi trường hợp ta sẽ có một hệ quả tương ứng.
 
-The ``||logic:if <true> then||`` block can make that happen.  
+Công cụ ở đây được sử dụng là khối lệnh ``||logic:if <true> then||``.  
 
 ```block
     if (true) {
@@ -427,32 +410,25 @@ The ``||logic:if <true> then||`` block can make that happen.
 <hr/>
 
 
-## Damage pt. 5
+## Cơ chế chịu sát thương từ kẻ địch (phần 4)
 
-🔲 Start by adding an ``||logic:if <true> then||`` container to the end
-of the newest **on sprite overlaps** container. 
+🔲 Trước tiên ta phải kéo khối lệnh ``||logic:if <true> then||`` vào trong khay **on sprite overlaps** đã có ở bước trước. 
 <hr/>
-The next part will take a little deep thinking  🤯
+Hãy đọc kỹ chút trước khi làm tiếp nhé  🤯
 
-In order to have reached the ``||logic:if <true> then||`` container, the 
-program must already know that an enemy has overlapped the player. 
-Now we just have to determine whether or not the player jumped on the enemy
-from the top.  
+Để lệnh ``||logic:if <true> then||`` hoạt động hiệu quả, ta cần làm rõ cơ chế "nhảy lên đầu" và "va vào" đối với kẻ địch sẽ khác nhau như thế nào.
 
-In this case, we want to check that the bottom of the player was higher
-than the center (**y**) of the enemy. Here's how to do that:
+Để làm được việc này, ta phải đánh giá được chân của nhân vật ở vị trí nào khi va chạm vào kẻ địch (cao hơn hay thấp hơn đầu của kẻ địch). Hãy làm như sau nhé:
 
-🔲 Drag out a ``||logic:0 < 0||`` logic argument block and snap it into
-``||logic:if <true> then||`` to replace the ** `<true>` ** argument.
+🔲 Kéo cụm ``||logic:0 < 0||`` ra rồi chèn vào thay thế vị trí của ô có chữ ** `<true>` ** trong cụm ``||logic:if <true> then||``.
 
-🔲 On the left-hand side of the **<**, place a ``||sprites:[mySprite] [x]||`` block and change 
-the **x** to **bottom**, and replace **mySprite** with the **sprite** 
-variable from the **on sprite overlaps** header.
+🔲 Từ cụm ``||logic:0 < 0||`` ta vừa kéo ra, ta thay thế số 0 bên trái của dấu **<** bằng cách kéo và thả ``||sprites:[mySprite] [x]||`` vào, đồng thời thay giá trị **x** bằng **bottom**, còn **mySprite** sẽ được thay thế bằng cách kéo **sprite** 
+từ phía trên đầu khay **on sprite overlaps** xuống chèn vào.
 
-🔲 Right-click on the logic argument that you just finished to duplicate it. 
+🔲 Chọn cả cụm **mySprite** - **bottom** bên trái dấu **<**, tạo một bản sao của nó (bằng cách kích chuột phải, chọn duplicate)
 
-🔲 Place the duplicate block to the right of the **<**. Replace **bottom** 
-with **y** and replace **sprite** with **otherSprite**.  
+🔲 Kéo cụm nhân bản vừa được tạo vào thế chỗ của số 0 bên phải dấu **<**. Đổi ngược **bottom** 
+thành **y**, còn với từ **sprite** thì ta thay thế bằng cách kéo ô **otherSprite** màu đỏ ở trên xuống chèn vào.  
 <br/>
 
 
@@ -464,16 +440,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Damage pt. 5.5
-To add more style, let's make the player bounce after they've jumped on an enemy.
+## Cơ chế chịu sát thương từ kẻ địch (phần 5)
+Để cho chuẩn với cơ chế tương tác vật lý, khi nhân vật nhảy lên đầu kẻ địch thì sẽ bị đội lên 1 chút.
 <hr/>
 
-🔲 Snap a ``||sprites:set [mySprite] [x] to ||`` block into the empty **if/then** 
-logic container and replace **mySprite** with **sprite**.
+🔲 Kéo ``||sprites:set [mySprite] [x] to ||`` vào khe trống trong khay hàm **if/then** 
+, sau đó đổi **mySprite** bằng cách kéo **sprite** từ phía trên đầu khay **on sprite overlaps** xuống chèn vào.
 
-🔲 Replace **x** with **vy (velocity y)** using the dropdown menu.
+🔲 Đổi **x** thành **vy (velocity y)**.
 
-🔲 Change the value from **0** to **-100**.  
+🔲 Ở số **0** bên cạnh ta đánh vào số **-100**.  
 <br/>
 
 
@@ -487,17 +463,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Damage pt. 6 @unplugged
+## Cơ chế chịu sát thương từ kẻ địch (phần 6) @unplugged
 
-Now we've written code that checks if the player has bounced on an enemy.  
-**But what if it didn't?**
+Thử nghĩ xem nếu nhân vật bị "va vào" kẻ địch thay vì "nhảy vào đầu" chúng thì thế nào? Và hậu quả của việc này là gì?
 
-We need to add an option in case the player and enemy overlapped in a 
-different way.  This catch-all condition is called an **else** clause. 
+Ta sẽ dùng **else** để tạo hậu quả cho trường hợp giả định "va chạm". 
 <hr/>
 
-To add an **else** clause to our **if/then** logic, simply press
-the **⊕** at the bottom-left corner of the **if/then** container and one will appear!
+Để thêm được hàm **else** này, ta ấn vào dấu **⊕** ở cuối khay chứa hàm **if/then** 1 lần.
 
 
 ```block
@@ -512,15 +485,13 @@ the **⊕** at the bottom-left corner of the **if/then** container and one will 
 })
 ```
 
-## Damage pt. 6.6
+## Cơ chế chịu sát thương từ kẻ địch (phần 7)
 
-Now that we have an **else** clause, we can use it
-for anything that needs to run when the player and enemy
-overlap in a non-jumping way. 
+Giờ ta đã có thêm hàm **else**, ta sẽ tiến hành vài thao tác cho trường hợp nhân vật bị "va chạm" với kẻ địch. 
 <hr/>
 
-🔲 To remove a life from the player under that condition, 
-snap a ``||info: change life by [-1]||`` block into the empty **else** clause.  
+🔲 Vì bị kẻ địch va vào ta sẽ dính sát thương, cách làm sẽ như sau: 
+kéo cụm ``||info: change life by [-1]||`` vào dưới khay trống **else** vừa tạo. Việc này có nghĩa là mỗi lần dính sát thương, chỉ số sinh mệnh của nhân vật sẽ bị giảm đi 1 đơn vị.  
 <br/>
 
 ```ghost
@@ -539,9 +510,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Finish
-🔥 Fantastic 🔥
+## 🔥 Hoàn thành! 🔥
 
-The basic enemies tutorial is complete!  
-Try defeating the level as is, then open the tilemap editor 
-and see what happens if you add more spawn points.
+Vậy là đã cơ bản xong về tương tác giữa nhân vật và kẻ địch. Ở bài sau ta sẽ tiến hành bố trí vị trí xuất hiện của lũ kẻ địch này nhé!

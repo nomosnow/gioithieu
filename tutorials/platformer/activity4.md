@@ -131,34 +131,30 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 
 ```
 
-## Start @unplugged
+## Bắt đầu @unplugged
 
-This tutorial will help add levels to your game. 
+Chúng ta tiếp tục với việc thiết kế cho game có nhiều cấp độ. 
 
-To make level changes easier (and prevent having to write the same
-code again and again) we'll also learn to create a simple [**_function_**](#funky "group of code that can be called using a specific name").
+Để dễ dàng làm việc cũng như tạo nhiều cấp độ mà không phải lặp lại các công đoạn giống nhau, ta sử dụng cơ chế [**_function_**](#funky "tập hợp các đoạn code được đánh tên và dễ dàng truy hồi").
 
-![Levels and Functions](/static/skillmaps/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
+![*Cấp độ* và *Function*](/static/skillmaps/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
 
 
-## Make a function
+## Tạo một function
 
-First, let's create a new function!
-
-Functions are chunks of code that you can name and 
-[**_call_**](#callingYou "insert into your code using the named label") 
-over and over from inside your program.  Unlike loops, you can run the code inside a 
-function again and again, even if you're doing something else inbetween.
+Một **function** là một tổ hợp các dòng code được định danh và dễ dàng truy hồi
+([**_call_**](#callingYou "được thêm dễ dàng vào các đoạn code khác dựa vào định danh của function đó")) 
+nhiều lần.
 <hr/>
 
-🔲 In the toolbox, expand the ``||statusbar:˅ Advanced||`` tab and click 
-on the ``||functions: Functions||`` category.
+🔲 Trên bảng công cụ, chọn ``||statusbar:˅ Advanced||`` (hình mũi tên chỉ xuống) và 
+chọn ``||functions: Functions||`` (_f(x)_)
 
-🔲 Press the ``||controller: Make a Function...||`` button to create your new function.
+🔲 Chọn ``||controller: Make a Function...||`` để tạo function mới.
 
-🔲 Click inside the textbox to name this function **startNextLevel**, then click **Done**.
+🔲 Ở phần tên đặt sẵn là _something_, ta xoá tên này đi và gõ vào **startNextLevel**, rồi ấn **Done**. Function cần tạo sẽ tự động xuất hiện trên màn hình làm việc.
 
-![naming a function](/static/skillmaps/platformer/name-function.gif "Say my name, say my name.")
+![Đặt tên cho function](/static/skillmaps/platformer/name-function.gif "Say my name, say my name.")
 
 
 ```blocks
@@ -167,21 +163,19 @@ function startNextLevel() {
 ```
 
 
-## Refactoring pt. 1
-Excellent! You should have a **startNextLevel** function container 
-in your workspace. Let's fill it up!
+## Tùy biến function (phần 1)
+Giờ thì khi function có tên **startNextLevel** đã có, ta sẽ cùng tiến hành sắp xếp các dòng code cần thiết nhé!
 
-Right now, the code you need for starting a level lives inside the 
-``||loops: on start||`` container — we'll want to move it over to the function .
+Tất cả các dòng lệnh cần sử dụng đã có từ trước, nằm trong khay  
+``||loops: on start||`` , ta chỉ việc lấy ra và ghép vào function mới tạo .
 <hr/>
 
-🔲 Pull the ``||scene: set tilemap to [ ]||`` block out of ``||loops: on start||``.
-Everything connected below should come along with it. 
+🔲 Đặt chuột ở dòng ``||scene: set tilemap to [ ]||`` , kích chuột trái để kéo ra, toàn bộ các dòng code bên dưới cũng sẽ đi theo, ta cần đưa chúng ra ngoài khay ``||loops: on start||``.
 
-🔲 Snap the whole chunk of code into your new **startNextLevel** function container.
+🔲 Toàn bộ các dòng code vừa được lấy ra, ta đưa vào khe trống bên trong function **startNextLevel** .
 <hr/>
 
-**Voila! Now you have a function!**  
+**Rất tốt! Chúng ta đã cơ bản tạo được một function có thể hoạt động.**  
 
 
 ```blocks
@@ -215,30 +209,22 @@ function startNextLevel () {
 }
 ```
 
-## Refactoring pt. 2
+## Tùy biến function (phần 2)
 
-Here's an important fact: *There's no point in building a function unless you
-__call__ it somewhere in your program.*
+Giờ đến phần quan trọng: chúng ta phải tận dụng được chức năng của function mới tạo vào việc lập trình game.
 
-The function that you've already built is just a 
-[**_definition_**](#defineMe "explanation of the meaning") 
-to let the computer know
-which instructions to run when you call **startNextLevel** in your code.
-The definition doesn't give the computer any idea *when* to run those 
-instructions.
+Function mà bạn vừa tạo ra chỉ là tổ hợp được định danh ([**_definition_**](#defineMe "explanation of the meaning"))
+và từ đó máy tính sẽ truy cập dựa vào tên của nó (ở đây là **startNextLevel**).
+Tuy nhiên, ta cần giúp máy tính có thêm dữ liệu để biết  _**khi nào**_ thì function sẽ được gọi tên.
 
-Let's add a function call into our program to let the computer know
-when to run **startNextLevel**.
+Để làm điều này, ta sẽ phải:.
 <hr/>
-🔲 From the ``||functions: Functions||`` category, drag a 
-``||functions: call startNextLevel||`` block and snap it into the end of the
-``||loops: on start||`` container.
+🔲 Trong công cu ``||functions: Functions||`` ta tìm vào kéo ra khối lệnh 
+``||functions: call startNextLevel||`` ra ngoài màn hình và đưa nó xuống vị trí dưới cùng trong khay chứa
+``||loops: on start||`` .
 <hr/>
-Check your game in the simulator. It shouldn't feel any different than
-the original (yet).  
+Giờ thì cơ bản mọi thứ trong game vẫn chưa có thay đổi gì cả, tuy nhiên đó là cho đến khi ta tiến hành bước tiếp theo!  
 
-If it doesn't feel the same, take a look at the hint
-to make sure your code matches up.
 
 ```blocks
 
@@ -299,17 +285,15 @@ info.setLife(3)
 startNextLevel()
 ```
 
-## Refactoring pt. 3
+## Tùy biến function (phần 3)
 
-🏆  Reach the trophy  🏆
+🏆  Dấu hiệu chuyển cấp độ 🏆
 
-The trophy tile would make a perfect doorway to the next level.  We already
-have an event for when the player overlaps that tile, we just need to change
-what happens inside of it. 
+Khi nhân vật kết thúc màn chơi và chuyển sang màn chơi tiếp theo, ta cần có một mốc để đánh dấu điều này, cụ thể ở đây bạn hãy đặt 1 chiếc cúp như phần thưởng cho nhân vật ở cuối màn. 
 <hr/>
-🔲 Remove the ``||game: game over <WIN>||`` block from the 
-**on sprite overlaps 🏆** event 
-and replace it with a new ``||functions: call startNextLevel||`` block.  
+🔲 Ta loại bỏ cụm code ``||game: game over <WIN>||`` khỏi khay lệnh 
+**on sprite overlaps 🏆**  , đồng thời thay thế nó bằng 
+dòng lệnh mới ``||functions: call startNextLevel||`` .  
 <br/>
 
 ```blocks
@@ -347,34 +331,26 @@ function startNextLevel () {
 }
 ```
 
-## Variable
+## Tuỳ biến các màn chơi (phần 1)
 
-👾 Lots of great games have more than two levels 👾
+👾 Một game hay có thể thu hút người chơi với càng nhiều màn chơi càng tốt 👾
 
-If we want to be able to keep track of the level we're on and
-recall that level whenever we need it, we're going to need
-a variable.
+Trong quá trình tạo ra trò chơi, để dánh dấu mỗi màn chơi ta dùng cơ chế **variable**.
 
-A variable will let us use the placeholder **currentLevel**
-to make decisions instead of creating new code for every possibility.
+Trong trường hợp này, cơ chế **variable** giúp ta không phải tiến hành lập trình lại toàn bộ màn chơi mà ta có thể tận dụng những yếu tố có thể lặp lại trong mỗi màn chơi.
 <hr/>
 
-🔲 To make a new variable, go to the ``||variables: Variables||`` menu
-and click on ``||controller: Make a Variable...||`` .
+🔲 Tạo một **variable** mới bằng cách kích vào công cụ ``||variables: Variables||`` , chọn ``||controller: Make a Variable...||`` .
 
-🔲 Enter **currentLevel** in the textbox and click **OK**.  
+🔲 Đặt tên là **currentLevel** và ấn **OK**.  
 <br/>
 
-## Variable 2
+## Tuỳ biến các màn chơi (phần 1)
 
-Now you have a variable named **currentLevel**.  Let's use it!
-
-We'll need to [**_increment_**](#addOn "add to")
- **currentLevel** each time the **startNextLevel** function is called.
+Với **currentLevel** mới tạo, ta sẽ sử dụng nó một cách hiệu quả để mỗi lần nhân vật qua màn, ta sẽ được chuyển sang cấp độ cao hơn.
  <hr/>
 
-🔲 Snap a ``||variables: change [currentLevel] by [1]||`` block 
-into the **top** of the **startNextLevel** function.  
+🔲 Lấy khối ``||variables: change [currentLevel] by [1]||`` ra và đưa vào trên cùng function **startNextLevel** .  
 <br/>
 
 ```blocks
@@ -411,16 +387,13 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 1
+## Màn chơi thay đổi (phần 1)
 
-If we want to change the scene for each new level (*spoiler...we do!*) then we're
-going to need to add some logic that looks at the **currentLevel** variable
-before it sets the stage.  
+Mỗi lần nhân vật kết thúc bằng cách chiến thắng 1 màn chơi, ta sẽ lập trình để nhân vật được đưa đến màn chơi ở cấp độ cao hơn, với một bản đồ khác, kẻ địch khác. 
 
-This is the perfect place for another **if/then** element!
+Để làm thế, ta lại cần đến hàm **nếu - thì** (**if/then**)
 <hr/>
-🔲 Connect a new ``||logic: if <true> then||`` block near the **top** of 
-the **startNextLevel** function container, just below the block to **change currentLevel by 1** .  
+🔲 Kéo thêm một dòng lệnh ``||logic: if <true> then||`` ra thả vào khay function **startNextLevel**, đặt nó ngay duới dòng **change currentLevel by 1**.  
 <br/>
 
 ```blocks
@@ -460,19 +433,18 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 2
+## Màn chơi thay đổi (phần 2)
 
-First, we should check and see if our current level is **1**.  
-If it is, we'll run the code for the first level,
-using our original tilemap.
+Trước tiên, ta sẽ có cơ chế kiểm tra màn chơi hiện tại là màn bao nhiêu. Nếu như đang ở màn đầu tiên, tức là màn **1**,  
+Thì mọi thiết lập cơ bản còn gọi là thiết lập gốc sẽ được hiện thị cho màn đầu tiên.
 <hr/> 
 
-🔲 Find a ``||logic:[0] [=] [0]||`` block to replace **`<true>`**
- in the empty ``||logic:if <true> then||`` container.
+🔲 Ta kéo khối lệnh ``||logic:[0] [=] [0]||`` và thay vào ô **`<true>`**
+ trong cụm ``||logic:if <true> then||`` ở bước trên.
 
-🔲 Replace the first **0** in the logic arguement with  ``||variables:currentLevel||``. 
+🔲 Với số **0** bên trái, ta lại kéo giá trị ``||variables:currentLevel||`` vào thay thế. 
 
-🔲 Replace the second **0** of the logic argument with **1**.  
+🔲 Số **0** bên phải ta xoá đi và đánh thay bằng số **1**.  
 <br/>
 
 ```blocks
@@ -511,22 +483,18 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3
+## Màn chơi thay đổi (phần 3)
 
-💡  When restructuring a program, it's a good habit to make sure everything works 
-as expected before making it more complicated. 
+💡  Trước khi ta đi đến những thiết lập phức tạp hơn, hãy đảm bảo các lệnh code cơ bản sẽ được sử dụng nhiều lần có thể hoạt động chính xác từ mức độ đầu tiên, như vậy về sau sẽ không phải chỉnh sửa nhiều. 
 
-Let's get our **if/then** logic working with our current game before we add new levels.
+Nhất là với hàm **if/then**.
 
 <hr/>
-If the player is on level 1, we want to show our current tile map.
+Khi đã xác định ta đang ở màn chơi **1**, bản đồ gốc được tạo đầu tiên sẽ được dùng.
 
-🔲 Move the ``||scene: set tilemap to [ ]||`` block from beneath the **if/then**
-and snap it inside the empty container.
+🔲 Kéo khối ``||scene: set tilemap to [ ]||`` ngay dưới hàm **if/then** ra bằng cách giữ phím control và kích chuột trái, sau đó thả ngay vào khe trống bên trong hàm **if/then**.
 
-The connected code will travel with the ``||scene: set tilemap to [ ]||`` block, 
-so once it has been connected, you'll need to grab the rest of the code and 
-snap it back in place beneath the **if/then**.
+Như vậy mọi thứ diễn ra bên trong bản đồ gốc (được đánh dấu bằng khối ``||scene: set tilemap to [ ]||`` ) đều sẽ tự liên kết.
 
 ```blocks
 
@@ -564,23 +532,20 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3.5
+## Màn chơi thay đổi (phần 4)
 
-That's a great start...but to ensure that it's working the same way 
-as your original game, you'll need the player to win when they reach the trophy.
+Khá ổn rồi, giờ ta phải làm việc với cơ chế cụ thể ở từng màn chơi khi nhân vật về đích:
 
-Let's think about how to do this with the conditional logic:
- - **IF** you're just starting and **currentLevel** is **1**, **THEN** put up the tilemap
- - Once we've reached the trophy, **currentLevel** is **bigger than 1**, and our player wins! 
+Có vài vấn đề logic cần quan tâm:
+ - Khi ta đang ở chính màn chơi **1**, đương nhiên bản đồ gốc sẽ được sử dụng ở đây
+ - Khi nhân vật hoàn thành màn chơi (chạm vào chiếc cúp ở cuối màn), màn chơi sẽ được tự động tăng lên cấp tiếp theo. 
 
-Thinking about it this way means we can use an **else** clause in our condition 
-to capture any case where **currentLevel** is larger than any level numbers we've 
-already defined.
+Cho trường hợp màn chơi chuyển sang cấp cao hơn này, ta dùng thêm hàm **else**
 <hr/>  
 
-🔲 Press the **⊕** button on the **if/then** container to add an **else** clause.
+🔲 Ấn vào dấu **⊕** ở cuối khay chứa hàm **if/then** để thêm khe lệnh **else**.
 
-🔲 Snap a ``||game: game over <WIN>||`` block inside.
+🔲 Kéo khối ``||game: game over <WIN>||`` thả vào khe trống vừa tạo.
 
 ```blocks
 let myEnemy: Sprite = null
@@ -621,29 +586,26 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3
+## Màn chơi thay đổi (phần 5)
 
-❓❓ Ready to take this to another level ❓❓
+❓❓ Bạn đã sẵn sàng các bước cho màn chơi cao hơn chưa ❓❓
 
-From here, adding new levels is extremely straightforward.  All you need to do is:
- - Add a new **else if** clause to your logic container
- - Copy the condition from your previous level into the new **else if**
- - Change the number on the right-side of the **=** to be the number of your new level
- - Set the new tilemap inside of the new **else if**
+Mỗi khi qua màn, có những điều sau cần lưu ý:
+ - Ta cần có hàm **else if** để chỉ **điều kiện - kết quả**
+ - Những yếu tố của màn cũ sẽ được giữ lại
+ - Màn chơi hiện tại được đánh thứ tự ở bên phải dấu **=**
+ - Màn chơi mới thì nên có bản đồ mới chứ không nên lặp lại
 
- That's it!  Ready to give it a shot?
+ Chuẩn bị xong rồi thì tiến hành thôi!
  <hr/>
 
-🔲 Press the **⊕** button on the **if/then/else** container to add an 
-**else if** clause.
+🔲 Ấn vào dấu **⊕** dưới cùng của khay chứa hàm **if/then/else** để thêm một lệnh **else if** nữa.
 
-🔲 Duplicate the ``||logic:[currentLevel] [=] [1]||`` block and place the 
-copy in the new **else if** condition slot.
+🔲 Nhân đôi khối ``||logic:[currentLevel] [=] [1]||`` bằng cách kích chuột phải và chọn **duplicate** rồi thả vào trong dãy lệnh **else if** vừa tạo.
 
-🔲 Change **1** to **2**.
+🔲 Ở đây ta tiến hành đổi số **1** thành **2**.
 
-🔲 Duplicate the ``||scene: set tilemap to [ ]||`` block from level 1 and snap it into the 
-empty **else if** container.  
+🔲 Tương tự ta nhân bản khối ``||scene: set tilemap to [ ]||`` và đưa vào trong khe trống của lệnh **else if** mới.  
 <br/>
 
 
@@ -666,21 +628,17 @@ let currentLevel = 0
 
 ```
 
-## Choosing a level pt. 4
+## Màn chơi thay đổi (phần 6)
 
-🎨 Time to get creative 🎨
+🎨 Hãy bỏ công sáng tạo một chút nhé 🎨
 
-What would you like to add or remove from the tilemap for your second level?
-Click on the tilemap icon inside the ``||scene: set tilemap to [ ]||`` block
-and edit it until you've got something of your own. 
+Màn chơi 2 không muốn lặp lại như màn chơi 1? Vậy phải thay đổi nó đi nhé:
+Kích vào ô vuông trong khối ``||scene: set tilemap to [ ]||`` , ta có thể chỉnh sửa bản đồ màn chơi. 
 
-Don't forget to leave a trophy tile in the new tilemap so the player has a way
-to win!
-
-You can follow those same steps to add a 3rd, 4th, or even 5th level!
+Chỉnh sửa gì thì cũng nhớ phải để lại biểu tượng cúp vàng làm mục tiêu cho nhân vật chiến thắng hoặc qua màn 3,4,5... tiếp theo nhé! 
 
 
-## Enemy cleanup pt. 1
+## Kẻ địch ở màn chơi mới (phần 1)
 
 ```ghost
 sprites.allOfKind(SpriteKind.Enemy)
@@ -689,22 +647,18 @@ for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
     }
 ```
 
-🎮 Try your game 🎮
+🎮 Bạn đã chơi thử game mình tạo đến đây chưa? 🎮
 
-There may be a couple of hiccups with the level changes...for example, we 
-need to clean up enemies from the last level before loading a new one.
+Nếu đã thử chơi, ta sẽ thấy ngay 1 vấn đề: kẻ địch ở các màn chơi trước vẫn còn sống sẽ tái xuất hiện ở màn chơi sau.
 
-To do that, you'll need to go through your entire list of enemies and 
-destroy them one by one. Fortunately, Arcade has a block for this exact purpose.
+Nếu cứ vậy, thì số lượng kẻ địch càng vào các màn chơi sau sẽ càng tăng dần. ta phải tìm cách ngăn chặn việc này!
 <hr/>
 
-🔲 Snap a ``||loops: for element [value] of [list]||`` loop into the very **top**
- of the **startNextLevel** function.
+🔲 Kéo một khối lệnh hàm lặp ``||loops: for element [value] of [list]||`` và thả vào **trên cùng** của khối function **startNextLevel**.
 
-🔲 From the ``||sprites:Sprites||`` category, grab an ``||sprites:array of sprites of kind [Player]||``
- argument and replace the **list** variable in the header of your new loop.
+🔲 Từ công cụ ``||sprites:Sprites||`` ta kéo khối ``||sprites:array of sprites of kind [Player]||`` và thả vào thay thế chỗ của ô **list** (màu đỏ) ở đầu của hàm lặp mới vừa tạo.
 
-🔲 Change the **array of sprites** kind to **Enemy**. 
+🔲 Đổi giá trị **array of sprites** thành **Enemy**. 
 <hr/>
 
 
@@ -754,19 +708,18 @@ function startNextLevel () {
 ```
 
 
-## Enemy cleanup pt. 2
+## Kẻ địch ở màn chơi mới (phần 2)
 
-Now you have a loop that will focus on each enemy, one at a time. 
-This is your chance to destroy them!
+Giờ thì ta hãy cài lệnh để lũ kẻ địch từ màn chơi cũ không **"bám đuôi"** ta lên màn chơi mới nhé.
 <hr/>
 
-🔲 Drag a ``||sprites: destroy [mySprite]||`` block into the new **for element** loop.
+🔲 Kéo khối ``||sprites: destroy [mySprite]||`` thả vào khe trống của hàm lặp **for element**.
 
-🔲 Replace ``||variables: mySprite||`` with the ``||variables: value||``
-attribute from the header of the **for element** loop.  
+🔲 Nhìn thấy ô ``||variables: value||`` màu đỏ phía trên không? kéo xuống dưới và đè vào ô ``||variables: mySprite||`` để thay thế nhé!
+
 <hr/>
 
-** That's it!  Your game can have as many levels as you can imagine!**
+** Vậy là xong! Dù ta có bao nhiêu màn chơi đi nữa thì kẻ địch ở màn chơi trước sẽ không còn làm phiền chúng ta khi lên cấp nữa **
 
 
 
@@ -815,4 +768,3 @@ function startNextLevel () {
 
 }
 ```
-

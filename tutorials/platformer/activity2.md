@@ -84,25 +84,24 @@ controller.moveSprite(mySprite, 100, 0)
 tiles.setTilemap(tilemap`level`)
 ```
 
-##  Bắt đầu @unplugged
+## Bắt đầu! @unplugged
 
 
-Trong hướng dẫn này, chúng ta sẽ tạo cách để chiến thắng hoặc thua trong trò chơi platformer.
-
-![Editing our platformer](/static/skillmaps/platformer/platformer2.gif "Time to live dangerously!")
+Trong bài này chúng ta sẽ thiết kế yếu tố thắng - thua trong trò chơi.
 
 
-## Camera
+![Tiến hành chỉnh sửa trò chơi](/static/skillmaps/platformer/platformer2.gif "Time to live dangerously!")
 
 
-Dành một chút thời gian để di chuyển sprite người chơi trên game .
+## Đặt góc nhìn
 
-Hiện tại, máy màn hình không di chuyển theo khi người chơi di chuyển ra khỏi màn hình.
-Chúng ta có thể sửa lỗi đó!
+Khi ta di chuyển nhân vật chính xung quanh, ta thấy góc nhìn trên màn hình không đổi, điều này dẫn tới việc khó theo dõi nhân vật, thậm chí nhân vật có thể biến mất khi nhảy ra ngoài màn hình.  
 
+Ta phải khắc phục vấn đề này
 <hr/>
 
-🔲 Kéo ``||scene:camera follow sprite [mySprite]||`` vào phần cuối của khối  ``||loops:on start||`` .
+🔲 Kéo khối ``||scene:camera follow sprite [mySprite]||`` và thả vào khay 
+ ``||loops:on start||``.
 <br/>
 
 ```blocks
@@ -133,30 +132,23 @@ tiles.setTilemap(tilemap`level`)
 scene.cameraFollowSprite(mySprite)
 ```
 
-## Vị trí bắt đầu
+## Đặt điểm xuất phát
 
+🎥 Sau khi chỉnh góc nhìn, ta có thể theo sát nhân vật của mình 🎥  
 
-🎥 Bây giờ chúng ta có thể di chuyển xung quanh và màn hình sẽ theo sau nhân vật chính 🎥
+Tiếc rằng, nhân vật có thể sẽ xuất hiện ở vị trí không thuận lợi mỗi khi bắt đầu lại!
 
-Thật không may, người chơi của chúng ta đang bắt đầu ở vị trí nguy hiểm!
-
-Thông thường, tất cả các sprite sẽ xuất hiện ở giữa màn hình.
-Hãy thay đổi vị trí để người chơi của bạn bắt đầu từ một nơi an toàn.
-
+Thông thường nhân vật sẽ xuất hiện ở chính giữa màn hình. Để đảm bảo nhân vật sẽ xuất hiện ở 1 vị trí an toàn, hãy tiến hành một vài chỉnh sửa nhé!
 <hr/>
 
-🔲 Kéo một khối ``||scene:place [mySprite] on top of random [ ]||`` vào dưới cùng của khối  ``||loops:on start||``.
+🔲 Kéo khối ``||scene:place [mySprite] on top of random [ ]||`` và thả vào 
+cuối khay ``||loops:on start||``.
 
-
-🔲 Nhấp vào ô màu xám và thay thế nó bằng vị trí mới có hình cờ xanh.
+🔲 Kích vào ô vuông xám và đổi sang biểu tượng lá cờ màu xanh lá.
 <hr/>
+**Vậy là vị trí lá cờ xanh trên bản đồ sẽ là vị trí xuất phát của nhân vật**  
 
-**Bây giờ sprite của bạn bắt đầu trên ô cờ xanh!**  
-
->> *Mẹo: Nếu bạn muốn sprite của mình bắt đầu ở một nơi khác,
-bạn có thể di chuyển cờ xanh bằng cách chỉnh sửa
-[__tilemap__](#tilemp "bản đồ của trò chơi").
-
+>> *Mẹo: Di chuyển lá cờ màu xanh lá trong [__tilemap__](#tilemp "mạng lưới các ô vuông tạo nên màn hình nền trò chơi") để thay đổi vị trí xuất phát của nhân vật chính.
 ```blocks
 let mySprite: Sprite = null
 scene.setBackgroundColor(11)
@@ -186,19 +178,19 @@ scene.cameraFollowSprite(mySprite)
 tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 ```
 
-## Kết Thúc Trò Chơi Phần 1
+## Cơ chế thua cuộc (Phần 1)
 
-💀 Đến lúc thêm một chút **nguy hiểm** vào trò chơi này 💀 
+💀 Bây giờ ta sẽ cho game thêm chút *thử thách* nhé 💀  
 
-Khi người chơi trèo lên ô hình hộp sọ, chúng ta sẽ kích hoạt một "GAME OVER".
+Nếu nhân vật di chuyển chạm vào biểu tượng đầu lâu, màn hình hiện lên biểu tượng thua cuộc: "GAME OVER".
 <hr/>
 
+🔲 Hãy kéo khay ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` thả vào màn hình.
 
-🔲 Kéo khối ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` vào màn hình chính.
+🔲 Kích vào ô vuông xám và đổi sang biểu tượng đầu lâu (màu đỏ)).
 
-🔲 Nhấp vào hình ô cờ và thay đổi nó thành ô hình sọ.
+🔲 Kéo tiếp khối ``||game:game over <LOSE>||`` thả vào khay mới tạo.
 
-🔲 Kéo một khối ``||game:game over <LOSE>||`` vào khối mới và chuyển công tắc thành **LOSE**.
 <br/>
 
 ```blocks
@@ -207,18 +199,19 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 })
 ```
 
-## Bạn Chiến Thắng Phần 1
 
-🎈 Chúng ta có cách để thua, hãy tạo thêm cách để chiến thắng 🎈  
+## Cơ chế thắng cuộc (Phần 1)
+
+🎈 Có thua thì sẽ phải có thắng 🎈  
 <hr/>
 
-🔲 Kéo một khối  ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
-trên màn hình chính.
+🔲 Kéo khay ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+thả ra ngoài màn hình.
 
-🔲 Lần này, thay đổi ô cờ thành ô hình chiếc cúp.
+🔲 Vẫn kích vào ô vuông xám, nhưng lần này đổi sang biểu tượng cúp chiến thắng.
 
-🔲 Kéo một khối ``||game:game over <LOSE>||`` vào khối mới và chuyển công tắc thành **WIN**.
-<br/>
+🔲 Kéo khối ``||game:game over <LOSE>||`` thả vào khay vừa tạo, đồng thời đổi giá trị &lt;LOSE&gt; thành &lt;WIN&gt;!
+
 <br/>
 
 ```blocks
@@ -227,12 +220,14 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location
 })
 ```
 
-## Hoàn Thành
+## Kết thúc
 
-Đó là tất cả!
+**Vậy là xong!**
 
-Bây giờ chúng ta có một trò chơi platformer đơn giản có cách để thắng và cách để thua.
+Giờ chúng ta đã có 1 game platform cơ bản với đủ cơ chế thắng và thua cuộc.
 
-Nếu bạn muốn, hãy mở bản đồ [__tilemap__](#tilemp "bản đồ ")
-và thiết kế bản đồ cho trò chơi riêng của bạn.
+Nếu muốn, bạn có thể mở công cụ [__tilemap__](#tilemp "mạng lưới các ô vuông tạo nên màn hình nền trò chơi") 
+và chỉnh sửa theo ý mình.
+<hr/> 
 
+>> *Mẹo: Nhớ sử dụng các công cụ tạo ra bức tường để ngăn chặn không cho nhân vật di chuyển đến các khu vực bạn không muốn!*
