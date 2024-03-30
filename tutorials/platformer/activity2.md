@@ -89,6 +89,7 @@ tiles.setTilemap(tilemap`level`)
 
 Trong bài này chúng ta sẽ thiết kế yếu tố thắng - thua trong trò chơi.
 
+
 ![Tiến hành chỉnh sửa trò chơi](/static/skillmaps/platformer/platformer2.gif "Time to live dangerously!")
 
 
@@ -189,6 +190,7 @@ Nếu nhân vật di chuyển chạm vào biểu tượng đầu lâu, màn hìn
 🔲 Kích vào ô vuông xám và đổi sang biểu tượng đầu lâu (màu đỏ)).
 
 🔲 Kéo tiếp khối ``||game:game over <LOSE>||`` thả vào khay mới tạo.
+
 <br/>
 
 ```blocks
@@ -196,6 +198,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
     game.over(false)
 })
 ```
+
 
 ## Cơ chế thắng cuộc (Phần 1)
 
@@ -208,6 +211,7 @@ thả ra ngoài màn hình.
 🔲 Vẫn kích vào ô vuông xám, nhưng lần này đổi sang biểu tượng cúp chiến thắng.
 
 🔲 Kéo khối ``||game:game over <LOSE>||`` thả vào khay vừa tạo, đồng thời đổi giá trị &lt;LOSE&gt; thành &lt;WIN&gt;!
+
 <br/>
 
 ```blocks
